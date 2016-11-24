@@ -1,0 +1,127 @@
+*base16.txt*  Generalized solarized.			*base16* *base16.vim*
+
+Author:  Nate Soares <http://so8r.es/>
+License: Same terms as Vim itself (see |license|)
+
+=============================================================================
+CONTENTS						*base16-contents*
+	    1. Introduction..............................|base16-intro|
+	    2. Configuration.............................|base16-config|
+	    3. Commands..................................|base16-commands|
+	    4. About.....................................|base16-about|
+
+
+==============================================================================
+INTRODUCTION					*base16-intro*
+
+Vim writing mode, for writing non-code text (books, novels, etc.).
+GUI not required.
+
+
+==============================================================================
+CONFIGURATION					*base16-config*
+
+						*g:base16_color_overrides*
+A dictionary that changes which colors do what. For example, you might set
+>
+	let g:base16_color_overrides = {
+		\ 'Todo': 'fg=purple bg=yellow bold',
+		\ 'DiffAdd': 'bg=blue',
+		\ 'DiffChange': 'bg=purple',
+		\ 'DiffDelete': 'fg=blue bg=aqua bold',
+		\ 'DiffText': 'bg=red bold',
+		\ 'IncSearch': 'reverse'}
+<
+to make this theme more like the vim default theme. (This theme is almost
+identical to the vim default theme, except that the above highlights are all
+changed to better options. Seriously, who highlights diff add/delete anything
+other than green/red?)
+
+I personally use
+>
+	let b:base16_color_overrides = {'Comment': 'fg=similar1 italic'}
+<
+to get some nice inoffensive comment coloring.
+
+The keys of the dictionary should be highlight groups. The values should be
+a string of arguments for |:Base16Highlight|, described below. It will be
+called with the [!] option.
+
+We recommend that you do most of your highlighting via |:highlight link|
+commands. This override should mainly be used to change the base theme. See
+|group-name| for the names of the core groups; setting the colors of those ~10
+groups is almost always all you need to do to get the behavior you want.
+
+To tweak highlighting of the nvim interface (such as the color of matched
+parenthesis, the color of incremental searches, etc.), see |highlight-groups|
+for the names and descriptions of all the relevant groups.
+
+						*g:base16_color_modifiers*
+A dictionary of modifications to make to the color scheme after the default
+colors have their run. For example, if you set
+<
+	let g:base16_color_modifiers = {'Comment': 'italic'}
+>
+then comments will be made italic in addition to whatever their default was
+going to be.
+
+Why do we provide all three of color_overrides, color_modifiers, and the
+Base16Highlight command, you ask? In short, because there are lots of different
+base16 color schemes, and we want you to be able to change between them on the
+fly. If we didn't let you do make all your changes via global variables, then
+you could run a bunch of :Base16Highlight commands in your init.vim after
+:colorscheme, but then you'd need to re-run them every time you changed color
+schemes, which would be quite annoying.
+
+					*g:base16_transparent_background*
+Set this to 1 if you don't want nvim painting a background (i.e., if you want
+to use terminal transparency and/or terminal background images).
+
+
+==============================================================================
+COMMANDS					*base16-commands*
+
+:Base16Highlight[!] group fg=... bg=... ...		*:Base16Highlight*
+Highlight some things. Examples:
+>
+	:Base16Highlight Comment fg=green italic
+	:Base16Highlight ErrorMsg bg=orange
+<
+The args may be fg=COLOR, bg=COLOR, or ATTR.  COLOR may be any of:
+
+	black dark3 dark2 dark1 light1 light2 light3 white
+	red orange yellow green aqua blue purple brown
+	base similar3 similar2 similar1 contrast1 contrast2 contrast3 antibase
+	bg background fg foreground
+
+'background' and 'foreground' are special options that use the normal background/foreground respectively. 'bg' and 'fg' are shorthand for those special terms.
+
+If |background|=dark, then 'base' is 'black', 'similar*' is 'dark*',
+'contrast*' is 'light*', and 'antibase' is 'white'. If |background|=light, then
+the direction is swapped ('base' is 'white', 'similar*' is 'light*', etc).
+
+ATTR may be any of the attributes listed in |attr-list|.
+
+If the command is given a bang, then other attributes are removed. Otherwise,
+attributes are stacked. For example,
+>
+	:Base16Highlight! Comment fg=green
+<
+sets the foreground to green, the background to NONE, and the attrs to NONE,
+whereas
+>
+	:Base16Highlight Comment fg=green
+<
+sets the foreground to green without affecting the foreground or background.
+
+
+==============================================================================
+ABOUT						*base16-about*
+
+See the README for instructions about how to generate lots of base16 color
+schemes.
+
+Grab the latest version or report a bug on GitHub:
+	http://github.com/Soares/base16.vim
+
+ vim:tw=78:ts=8:sw=8:sts=8:noet:ft=help:norl:
