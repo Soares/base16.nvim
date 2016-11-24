@@ -14,8 +14,69 @@ CONTENTS						*base16-contents*
 ==============================================================================
 INTRODUCTION					*base16-intro*
 
-Vim writing mode, for writing non-code text (books, novels, etc.).
-GUI not required.
+A whole bunch of color schemes for neovim. They are pretty, configurable, and
+work well with neovim's terminal emulator. You will need |termguicolors| set to
+1 in order to use them properly.
+
+Whether you get a light or a dark scheme depends on the setting of
+|background|. You may change color schemes on the fly.
+
+The current list of available color schemes is:
+
+3024
+apathy
+ashes
+atelier-cave
+atelier-dune
+atelier-estuary
+atelier-forest
+atelier-heath
+atelier-lakeside
+atelier-plateau
+atelier-savanna
+atelier-seaside
+atelier-sulphurpool
+bespin
+brewer
+bright
+chalk
+codeschool
+colors
+darktooth
+default
+eighties
+embers
+flat
+gooey
+google
+grayscale
+greenscreen
+harmonic
+hopscotch
+irblack
+isotope
+macintosh
+marrakesh
+mocha
+monokai
+ocean
+oceanicnext
+oliveira
+paraiso
+phd
+pop
+railscasts
+seti
+shapeshifter
+solarized
+summerfruit
+tomorrow
+tube
+twilight
+unikitty
+yesterday-bright
+yesterday-night
+yesterday
 
 
 ==============================================================================
@@ -59,9 +120,9 @@ for the names and descriptions of all the relevant groups.
 						*g:base16_color_modifiers*
 A dictionary of modifications to make to the color scheme after the default
 colors have their run. For example, if you set
-<
-	let g:base16_color_modifiers = {'Comment': 'italic'}
 >
+	let g:base16_color_modifiers = {'Comment': 'italic'}
+<
 then comments will be made italic in addition to whatever their default was
 going to be.
 
@@ -94,7 +155,9 @@ The args may be fg=COLOR, bg=COLOR, or ATTR.  COLOR may be any of:
 	base similar3 similar2 similar1 contrast1 contrast2 contrast3 antibase
 	bg background fg foreground
 
-'background' and 'foreground' are special options that use the normal background/foreground respectively. 'bg' and 'fg' are shorthand for those special terms.
+'background' and 'foreground' are special options that use the normal
+background/foreground respectively. 'bg' and 'fg' are shorthand for those
+special terms.
 
 If |background|=dark, then 'base' is 'black', 'similar*' is 'dark*',
 'contrast*' is 'light*', and 'antibase' is 'white'. If |background|=light, then

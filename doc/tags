@@ -1,0 +1,12 @@
+:Base16Highlight	base16.txt	/*:Base16Highlight*
+base16	base16.txt	/*base16*
+base16-about	base16.txt	/*base16-about*
+base16-commands	base16.txt	/*base16-commands*
+base16-config	base16.txt	/*base16-config*
+base16-contents	base16.txt	/*base16-contents*
+base16-intro	base16.txt	/*base16-intro*
+base16.txt	base16.txt	/*base16.txt*
+base16.vim	base16.txt	/*base16.vim*
+g:base16_color_modifiers	base16.txt	/*g:base16_color_modifiers*
+g:base16_color_overrides	base16.txt	/*g:base16_color_overrides*
+g:base16_transparent_background	base16.txt	/*g:base16_transparent_background*
