@@ -2,7 +2,7 @@
 
 Install with something like Plug:
 
-    Plug 'Soares/base16.vim'
+    Plug 'Soares/base16.nvim'
 
 The main features of these color schemes are:
 
@@ -13,7 +13,10 @@ The main features of these color schemes are:
 2. They set all the `g:terminal_color_*` variables, which makes the terminal
    emulator in neovim use the right colors too.
 
-Install this plugin in the usual way (with vim-plug or vundle or whatever).
+Install this plugin in the usual way (with vim-plug or vundle or whatever). You
+will need to `set termguicolors=1` in order for these to work properly. (That
+limitation can be removed if you extend template.ejs to have cterm support, in
+which case, pull requests are very much appreciated.)
 
 The current available color schemes are
 
