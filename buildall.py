@@ -14,13 +14,20 @@ args = parser.parse_args()
 
 def generate(name, scheme, brightness=None):
     filepath = os.path.join(os.path.expanduser(args.outdir), name)
-    parts = [args.builder, '-s', scheme, '-t', args.template]
+    if brightness is not None:
+        template = os.path.join(args.template, brightness) + '.ejs'
+    else:
+        template = args.template
+    parts = [args.builder, '-s', scheme, '-t', template]
     if brightness is not None:
         parts += ['-b', brightness]
     print('Generating', filepath)
     with open(filepath, 'wb') as outfile:
         outfile.write(subprocess.check_output(parts))
 
+if not os.path.isdir(args.outdir):
+    print('Making directory', args.outdir)
+    os.makedirs(args.outdir)
 for scheme in os.listdir(args.schemedir):
     schemename, _ = os.path.splitext(scheme)
     schemepath = os.path.join(args.schemedir, scheme)
@@ -29,5 +36,5 @@ for scheme in os.listdir(args.schemedir):
         generate(name, schemepath)
     else:
         for brightness in ['light', 'dark']:
-            name = '{}-{}.{}'.format(schemename, brightness, args.extension)
+            name = '{}-{}{}'.format(schemename, brightness, args.extension)
             generate(name, schemepath, brightness)
