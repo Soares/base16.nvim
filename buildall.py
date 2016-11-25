@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 from __future__ import print_function
 import argparse
-import os, sys
+import os
 import subprocess
 
 parser = argparse.ArgumentParser(description='Generate all color files for a given template.')
 parser.add_argument('-t', '--template', help='the template (file or directory)', default='template.ejs')
-parser.add_argument('-s', '--schemedir', help='where to find all the schemes', default='./schemes') 
+parser.add_argument('-s', '--schemedir', help='where to find all the schemes', default='./schemes')
 parser.add_argument('-o', '--outdir', help='where to dump all the files', default='./colors')
 parser.add_argument('-x', '--extension', help='what extension to put on the files', default='.vim')
 parser.add_argument('-b', '--builder', help='the build program to run', default='base16-builder')
@@ -31,4 +31,3 @@ for scheme in os.listdir(args.schemedir):
         for brightness in ['light', 'dark']:
             name = '{}-{}.{}'.format(schemename, brightness, args.extension)
             generate(name, schemepath, brightness)
-
