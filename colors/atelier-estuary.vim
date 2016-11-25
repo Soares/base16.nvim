@@ -146,12 +146,11 @@ endif
 " We will follow this pattern with a few minor changes:
 " 1. We'll use the reverse trick on ErrorMsg and TODO
 " 2. TODO will be black-on-yellow, because blue-on-yellow is garish.
-" 3. In light color schemes, we use brown in place of yellow.
 " To override these, see the discussion on g:base16_color_overrides below.
 let s:specs['Comment']     = 'fg=blue italic'
 let s:specs['Constant']    = 'fg=red'
 let s:specs['Identifier']  = 'fg=aqua'
-let s:specs['Statement']   = (&background == 'dark' ? 'fg=yellow' : 'fg=brown')
+let s:specs['Statement']   = 'fg=yellow'
 let s:specs['PreProc']     = 'fg=purple'
 let s:specs['Type']        = 'fg=green'
 let s:specs['Special']     = 'fg=orange'
