@@ -22,12 +22,13 @@ def generate(name, scheme, brightness=None):
         outfile.write(subprocess.check_output(parts))
 
 for scheme in os.listdir(args.schemedir):
-    scheme, _ = os.path.splitext(scheme)
+    schemename, _ = os.path.splitext(scheme)
+    schemepath = os.path.join(args.schemedir, scheme)
     if os.path.isfile(args.template):
-        name = '{}{}'.format(scheme, args.extension)
-        generate(name, scheme)
+        name = '{}{}'.format(schemename, args.extension)
+        generate(name, schemepath)
     else:
         for brightness in ['light', 'dark']:
-            name = '{}-{}.{}'.format(scheme, brightness, args.extension)
-            generate(name, scheme, brightness)
+            name = '{}-{}.{}'.format(schemename, brightness, args.extension)
+            generate(name, schemepath, brightness)
 
