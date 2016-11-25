@@ -40,6 +40,23 @@ endif
 let g:colors_name = 'base16-gooey'
 
 
+" If you set g:base16_shell_path, we'll run the associated base16 shell scripts
+" to update the terminal colors. This is helpful if, e.g., you have a
+" transparent background, and you want the terminal background to update when
+" you :colo a different scheme.
+" Set this to something like
+" '/path/to/dir/with/files/like/base16-colorscheme.dark.sh'
+if !has('gui_running')
+  if exists('g:base16_shell_path')
+    let s:filename = g:base16_shell_path.'/gooey-'.&background.'.sh'
+    if filereadable(s:filename)
+      execute 'silent !/bin/sh' s:filename
+    endif
+    unlet s:filename
+  endif
+endif
+
+
 " The Color Dictionary -------------------------------------------------------
 " You may use this global dictionary to access your 16 colors.
 " If you don't want it, you can always |:unlet| it after |:colorscheme|.
@@ -324,5 +341,4 @@ let g:terminal_color_12 = g:base16_color_dict['blue']    " light blue
 let g:terminal_color_13 = g:base16_color_dict['purple']  " light magenta
 let g:terminal_color_14 = g:base16_color_dict['aqua']    " light cyan
 let g:terminal_color_15 = g:base16_color_dict['white']   " white
-
 

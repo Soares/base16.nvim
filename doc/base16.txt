@@ -141,6 +141,31 @@ Set this to 1 if you don't want nvim painting a background (i.e., if you want
 to use terminal transparency and/or terminal background images).
 
 
+					*g:base16_shell_path*
+Set this to the location of shell files that you want to run when you change
+themes. This is unnecessary, but useful if, e.g., you want to use terminal
+transparency, in which case you'll want the terminal background color to change
+whenever you change themes, which means that you'll want a shell script to run
+whenever you :colorscheme.
+
+You should set this to the path to a directory WITHOUT THE TRAILING SLASH which
+contains files like
+>
+	solarized-dark.sh
+	solarized-light.sh
+<
+for each theme that you want a special script run for. This plugin provides
+some scripts that do their best to set the default packgorund for you; if you
+want to generate them, run something like
+>
+	./buildall.py -t templates/shell -x .sh -s schemes -o ~/.config/base16-shell
+
+and then set g:base16_shell_path to
+>
+	expand('~/.config/base16-shell')
+<
+
+
 ==============================================================================
 COMMANDS					*base16-commands*
 
