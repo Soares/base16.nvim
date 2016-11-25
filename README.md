@@ -88,7 +88,7 @@ special colors
 which range from black to white if `background` is `dark`, and from white to
 black if `background` is `light`.
 
-To use a transparent background in allowing you to take advantage of terminal
+To use a transparent background (allowing you to take advantage of terminal
 transparency and/or terminal background images), set
 
     let g:base16_transparent_background = 1
