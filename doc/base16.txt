@@ -37,6 +37,7 @@ atelier-savanna
 atelier-seaside
 atelier-sulphurpool
 bespin
+bluescreen
 brewer
 bright
 chalk
@@ -66,6 +67,7 @@ paraiso
 phd
 pop
 railscasts
+redscreen
 seti
 shapeshifter
 solarized
@@ -74,9 +76,9 @@ tomorrow
 tube
 twilight
 unikitty
+yesterday
 yesterday-bright
 yesterday-night
-yesterday
 
 
 ==============================================================================

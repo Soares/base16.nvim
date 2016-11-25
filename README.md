@@ -34,6 +34,7 @@ The current available color schemes are
     atelier-seaside
     atelier-sulphurpool
     bespin
+		bluescreen
     brewer
     bright
     chalk
@@ -63,6 +64,7 @@ The current available color schemes are
     phd
     pop
     railscasts
+		redscreen
     seti
     shapeshifter
     solarized
