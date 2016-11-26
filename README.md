@@ -11,12 +11,13 @@ The main features of these color schemes are:
    color scheme, but with the colors set to nicer base16 colors. Configuration
    options let you change which types of objects are which types of colors.
 2. They set all the `g:terminal_color_*` variables, which makes the terminal
-   emulator in neovim use the right colors too.
+   emulator in neovim use a matching colorscheme.
 
 Install this plugin in the usual way (with vim-plug or vundle or whatever). You
-will need to `set termguicolors=1` in order for these to work properly. (That
-limitation can be removed if you extend template.ejs to have cterm support, in
-which case, pull requests are very much appreciated.)
+will need to either `set termguicolors=1` or use something like
+[base16 shell](https://github.com/chriskempson/base16-shell) to set your
+terminal colors to your preferred base16 color scheme. For airline support,
+`let g:base16_airline=1`.
 
 The current available color schemes are
 
@@ -34,7 +35,6 @@ The current available color schemes are
     atelier-seaside
     atelier-sulphurpool
     bespin
-		bluescreen
     brewer
     bright
     chalk
@@ -65,6 +65,7 @@ The current available color schemes are
     pop
     railscasts
 		redscreen
+    royal
     seti
     shapeshifter
     solarized

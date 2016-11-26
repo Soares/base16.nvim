@@ -3,7 +3,8 @@
 " Neovim template: Nate Soares (http://so8r.es)
 
 " The main ideas of this template are as follows:
-" 1. Expose the available colors via g:base16_color_dict.
+" 1. Expose the available colors via g:base16_hex_colors and
+"    g:base16_cterm_colors.
 " 2. Use the default vim color allocation. In other words, compared to the
 "    default vim theme, using this theme should change which red, blue, and
 "    green you see, but it should not change which things appear red vs blue
@@ -16,19 +17,6 @@
 " 5. Expose a g:base16_transparent_background option in case you want vim to
 "    let the terminal set the background (e.g., if your terminal has
 "    a transparent background or a background image).
-"
-" This color scheme assumes you're using neovim, and that your terminal is set
-" up to use fancy colors. See |termguicolors| in neovim.
-" TODO: The ideas above could all be applied to make a better vim theme; the
-" labor would mainly be in using cterm instead of gui everywhere. I lack the
-" time to do this properly.
-
-if !has('termguicolors') || !&termguicolors
-  echohl ErrorMsg
-  echomsg 'This color scheme may only be used with termguicolors enabled.'
-  echohl None
-  finish
-endif
 
 " Boilerplate: clear existing highlighting, reset the syntax, etc.
 highlight clear
@@ -47,7 +35,7 @@ let g:colors_name = 'base16-atelier-lakeside'
 " to the light/dark greys differently depending on &background. See below.
 "
 " dark3 is the darkest grey; light3 is the lightest grey.
-let g:base16_color_dict = {
+let g:base16_hex_colors = {
       \ 'black':  '#161b1d',
       \ 'dark3':  '#1f292e',
       \ 'dark2':  '#516d7b',
@@ -65,31 +53,54 @@ let g:base16_color_dict = {
       \ 'purple': '#6b6bb8',
       \ 'brown':  '#b72dd2'}
 
+let g:base16_cterm_colors = {
+      \ 'black':  0,
+      \ 'dark3':  18,
+      \ 'dark2':  19,
+      \ 'dark1':  8,
+      \ 'light1': 20,
+      \ 'light2': 7,
+      \ 'light3': 21,
+      \ 'white':  15,
+      \ 'red':    1,
+      \ 'orange': 16,
+      \ 'yellow': 3,
+      \ 'green':  2,
+      \ 'aqua':   6,
+      \ 'blue':   4,
+      \ 'purple': 5,
+      \ 'brown':  17}
+
+
+
 " The extra colors that you have at your disposal are:
 " base similar3 similar2, similar1, contrast1, contrast2, contrast3 antibase.
 " If background is dark, then this spectrum runs black ... white.
 " If background is light, it runs white ... black.
 " Higher numbers are more extreme. So similar3 is most similar to base, and
 " contrast3 is most similar to antibase.
-if &background == 'dark'
-  let g:base16_color_dict['base'] = g:base16_color_dict['black']
-  let g:base16_color_dict['similar3'] = g:base16_color_dict['dark3']
-  let g:base16_color_dict['similar2'] = g:base16_color_dict['dark2']
-  let g:base16_color_dict['similar1'] = g:base16_color_dict['dark1']
-  let g:base16_color_dict['contrast1'] = g:base16_color_dict['light1']
-  let g:base16_color_dict['contrast2'] = g:base16_color_dict['light2']
-  let g:base16_color_dict['contrast3'] = g:base16_color_dict['light3']
-  let g:base16_color_dict['antibase'] = g:base16_color_dict['white']
-else
-  let g:base16_color_dict['base'] = g:base16_color_dict['white']
-  let g:base16_color_dict['similar3'] = g:base16_color_dict['light3']
-  let g:base16_color_dict['similar2'] = g:base16_color_dict['light2']
-  let g:base16_color_dict['similar1'] = g:base16_color_dict['light1']
-  let g:base16_color_dict['contrast1'] = g:base16_color_dict['dark1']
-  let g:base16_color_dict['contrast2'] = g:base16_color_dict['dark2']
-  let g:base16_color_dict['contrast3'] = g:base16_color_dict['dark3']
-  let g:base16_color_dict['antibase'] = g:base16_color_dict['black']
-endif
+for s:dict in [g:base16_hex_colors, g:base16_cterm_colors]
+  if &background == 'dark'
+    let s:dict['base'] = s:dict['black']
+    let s:dict['similar3'] = s:dict['dark3']
+    let s:dict['similar2'] = s:dict['dark2']
+    let s:dict['similar1'] = s:dict['dark1']
+    let s:dict['contrast1'] = s:dict['light1']
+    let s:dict['contrast2'] = s:dict['light2']
+    let s:dict['contrast3'] = s:dict['light3']
+    let s:dict['antibase'] = s:dict['white']
+  else
+    let s:dict['base'] = s:dict['white']
+    let s:dict['similar3'] = s:dict['light3']
+    let s:dict['similar2'] = s:dict['light2']
+    let s:dict['similar1'] = s:dict['light1']
+    let s:dict['contrast1'] = s:dict['dark1']
+    let s:dict['contrast2'] = s:dict['dark2']
+    let s:dict['contrast3'] = s:dict['dark3']
+    let s:dict['antibase'] = s:dict['black']
+  endif
+endfor
+unlet s:dict
 
 
 " The Base16Highlight Command ------------------------------------------------
@@ -124,7 +135,7 @@ let s:specs = {}
 
 " If the user has set g:base16_transparent_background then the normal group
 " has no background color.
-if exists('g:base16_transparent_background') && g:base16_transparent_background
+if get(g:, 'base16_transparent_background', 0)
   let s:specs['Normal'] = 'fg=antibase'
 else
   let s:specs['Normal'] = 'fg=antibase bg=base'
@@ -308,21 +319,79 @@ unlet s:group s:spec s:specs
 " The colors used by terminals started insight neovim.
 " We do not set: light blue, light green, light cyan, light purple.
 " Light red is set to orange.
-let g:terminal_color_0  = g:base16_color_dict['black']   " black
-let g:terminal_color_1  = g:base16_color_dict['red']     " red
-let g:terminal_color_2  = g:base16_color_dict['green']   " green
-let g:terminal_color_3  = g:base16_color_dict['yellow']  " yellow
-let g:terminal_color_4  = g:base16_color_dict['blue']    " blue
-let g:terminal_color_5  = g:base16_color_dict['purple']  " magenta
-let g:terminal_color_6  = g:base16_color_dict['aqua']    " cyan
-let g:terminal_color_7  = g:base16_color_dict['light2']  " light grey
-let g:terminal_color_8  = g:base16_color_dict['dark2']   " dark grey
-let g:terminal_color_9  = g:base16_color_dict['orange']  " light red
-let g:terminal_color_10 = g:base16_color_dict['green']   " light green
-let g:terminal_color_11 = g:base16_color_dict['brown']   " light yellow
-let g:terminal_color_12 = g:base16_color_dict['blue']    " light blue
-let g:terminal_color_13 = g:base16_color_dict['purple']  " light magenta
-let g:terminal_color_14 = g:base16_color_dict['aqua']    " light cyan
-let g:terminal_color_15 = g:base16_color_dict['white']   " white
+if has('termguicolors') && &termguicolors
+  let g:terminal_color_0  = g:base16_hex_colors['black']   " black
+  let g:terminal_color_1  = g:base16_hex_colors['red']     " red
+  let g:terminal_color_2  = g:base16_hex_colors['green']   " green
+  let g:terminal_color_3  = g:base16_hex_colors['yellow']  " yellow
+  let g:terminal_color_4  = g:base16_hex_colors['blue']    " blue
+  let g:terminal_color_5  = g:base16_hex_colors['purple']  " magenta
+  let g:terminal_color_6  = g:base16_hex_colors['aqua']    " cyan
+  let g:terminal_color_7  = g:base16_hex_colors['light2']  " light grey
+  let g:terminal_color_8  = g:base16_hex_colors['dark2']   " dark grey
+  let g:terminal_color_9  = g:base16_hex_colors['orange']  " light red
+  let g:terminal_color_10 = g:base16_hex_colors['green']   " light green
+  let g:terminal_color_11 = g:base16_hex_colors['brown']   " light yellow
+  let g:terminal_color_12 = g:base16_hex_colors['blue']    " light blue
+  let g:terminal_color_13 = g:base16_hex_colors['purple']  " light magenta
+  let g:terminal_color_14 = g:base16_hex_colors['aqua']    " light cyan
+  let g:terminal_color_15 = g:base16_hex_colors['white']   " white
+endif
 
+
+" Airline config. ------------------------------------------------------------
+if get(g:, 'base16_airline', 0)
+  let s:scheme = substitute('atelier-lakeside', '-', '_', 'g')
+
+  let g:airline#themes#base16_{s:scheme}#palette = {}
+  let s:N1   = [ g:base16_hex_colors['dark3'], g:base16_hex_colors['green'], g:base16_cterm_colors['dark3'], g:base16_cterm_colors['green'] ]
+  let s:N2   = [ g:base16_hex_colors['light3'], g:base16_hex_colors['dark2'], g:base16_cterm_colors['light3'], g:base16_cterm_colors['dark2'] ]
+  let s:N3   = [ g:base16_hex_colors['orange'], g:base16_hex_colors['dark3'], g:base16_cterm_colors['orange'], g:base16_cterm_colors['dark3'] ]
+  let g:airline#themes#base16_{s:scheme}#palette.normal = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
+  let g:airline#themes#base16_{s:scheme}#palette.normal.airline_warning = [ g:base16_hex_colors['black'], g:base16_hex_colors['yellow'], g:base16_cterm_colors['black'], g:base16_cterm_colors['yellow'] ]
+  let g:airline#themes#base16_{s:scheme}#palette.normal.airline_error = [ g:base16_hex_colors['black'], g:base16_hex_colors['red'], g:base16_cterm_colors['black'], g:base16_cterm_colors['red'] ]
+  unlet s:N1 s:N2 s:N3
+
+  let s:I1   = [ g:base16_hex_colors['dark3'], g:base16_hex_colors['blue'], g:base16_cterm_colors['dark3'], g:base16_cterm_colors['blue'] ]
+  let s:I2   = [ g:base16_hex_colors['light3'], g:base16_hex_colors['dark2'], g:base16_cterm_colors['light3'], g:base16_cterm_colors['dark2'] ]
+  let s:I3   = [ g:base16_hex_colors['orange'], g:base16_hex_colors['dark3'], g:base16_cterm_colors['orange'], g:base16_cterm_colors['dark3'] ]
+  let g:airline#themes#base16_{s:scheme}#palette.insert = airline#themes#generate_color_map(s:I1, s:I2, s:I3)
+  let g:airline#themes#base16_{s:scheme}#palette.insert.airline_warning = [ g:base16_hex_colors['black'], g:base16_hex_colors['yellow'], g:base16_cterm_colors['black'], g:base16_cterm_colors['yellow'] ]
+  let g:airline#themes#base16_{s:scheme}#palette.insert.airline_error = [ g:base16_hex_colors['black'], g:base16_hex_colors['red'], g:base16_cterm_colors['black'], g:base16_cterm_colors['red'] ]
+  unlet s:I1 s:I2 s:I3
+
+  let s:R1   = [ g:base16_hex_colors['dark3'], g:base16_hex_colors['red'], g:base16_cterm_colors['dark3'], g:base16_cterm_colors['red'] ]
+  let s:R2   = [ g:base16_hex_colors['light3'], g:base16_hex_colors['dark2'], g:base16_cterm_colors['light3'], g:base16_cterm_colors['dark2'] ]
+  let s:R3   = [ g:base16_hex_colors['orange'], g:base16_hex_colors['dark3'], g:base16_cterm_colors['orange'], g:base16_cterm_colors['dark3'] ]
+  let g:airline#themes#base16_{s:scheme}#palette.replace = airline#themes#generate_color_map(s:R1, s:R2, s:R3)
+  let g:airline#themes#base16_{s:scheme}#palette.replace.airline_warning = [ g:base16_hex_colors['black'], g:base16_hex_colors['yellow'], g:base16_cterm_colors['black'], g:base16_cterm_colors['yellow'] ]
+  let g:airline#themes#base16_{s:scheme}#palette.replace.airline_error = [ g:base16_hex_colors['black'], g:base16_hex_colors['red'], g:base16_cterm_colors['black'], g:base16_cterm_colors['red'] ]
+  unlet s:R1 s:R2 s:R3
+
+  let s:V1   = [ g:base16_hex_colors['dark3'], g:base16_hex_colors['purple'], g:base16_cterm_colors['dark3'], g:base16_cterm_colors['purple'] ]
+  let s:V2   = [ g:base16_hex_colors['light3'], g:base16_hex_colors['dark2'], g:base16_cterm_colors['light3'], g:base16_cterm_colors['dark2'] ]
+  let s:V3   = [ g:base16_hex_colors['orange'], g:base16_hex_colors['dark3'], g:base16_cterm_colors['orange'], g:base16_cterm_colors['dark3'] ]
+  let g:airline#themes#base16_{s:scheme}#palette.visual = airline#themes#generate_color_map(s:V1, s:V2, s:V3)
+  let g:airline#themes#base16_{s:scheme}#palette.visual.airline_warning = [ g:base16_hex_colors['black'], g:base16_hex_colors['yellow'], g:base16_cterm_colors['black'], g:base16_cterm_colors['yellow'] ]
+  let g:airline#themes#base16_{s:scheme}#palette.visual.airline_error = [ g:base16_hex_colors['black'], g:base16_hex_colors['red'], g:base16_cterm_colors['black'], g:base16_cterm_colors['red'] ]
+  unlet s:V1 s:V2 s:V3
+
+  let s:IA1   = [ g:base16_hex_colors['light2'], g:base16_hex_colors['dark3'], g:base16_cterm_colors['light2'], g:base16_cterm_colors['dark3'] ]
+  let s:IA2   = [ g:base16_hex_colors['light2'], g:base16_hex_colors['dark3'], g:base16_cterm_colors['light2'], g:base16_cterm_colors['dark3'] ]
+  let s:IA3   = [ g:base16_hex_colors['light2'], g:base16_hex_colors['dark3'], g:base16_cterm_colors['light2'], g:base16_cterm_colors['dark3'] ]
+  let g:airline#themes#base16_{s:scheme}#palette.inactive = airline#themes#generate_color_map(s:IA1, s:IA2, s:IA3)
+  let g:airline#themes#base16_{s:scheme}#palette.inactive.airline_warning = [ g:base16_hex_colors['black'], g:base16_hex_colors['yellow'], g:base16_cterm_colors['black'], g:base16_cterm_colors['yellow'] ]
+  let g:airline#themes#base16_{s:scheme}#palette.inactive.airline_error = [ g:base16_hex_colors['black'], g:base16_hex_colors['red'], g:base16_cterm_colors['black'], g:base16_cterm_colors['red'] ]
+  unlet s:IA1 s:IA2 s:IA3
+
+  let g:airline#themes#base16_{s:scheme}#palette.accents = {
+          \ 'red': [ g:base16_hex_colors['red'], g:base16_hex_colors['red'], g:base16_cterm_colors['red'], g:base16_cterm_colors['red']],
+          \ 'green': [ g:base16_hex_colors['green'], g:base16_hex_colors['green'], g:base16_cterm_colors['green'], g:base16_cterm_colors['green']],
+          \ 'blue': [ g:base16_hex_colors['blue'], g:base16_hex_colors['blue'], g:base16_cterm_colors['blue'], g:base16_cterm_colors['blue']],
+          \ 'yellow': [ g:base16_hex_colors['yellow'], g:base16_hex_colors['yellow'], g:base16_cterm_colors['yellow'], g:base16_cterm_colors['yellow']],
+          \ 'orange': [ g:base16_hex_colors['orange'], g:base16_hex_colors['orange'], g:base16_cterm_colors['orange'], g:base16_cterm_colors['orange']],
+          \ 'purple': [ g:base16_hex_colors['purple'], g:base16_hex_colors['purple'], g:base16_cterm_colors['purple'], g:base16_cterm_colors['purple']]}
+
+  unlet s:scheme
+endif
 

@@ -1,5 +1,5 @@
-" Base16 Atelier Cave (https://github.com/chriskempson/base16)
-" Scheme: Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/cave)
+" Base16 <%- scheme %> (https://github.com/chriskempson/base16)
+" Scheme: <%- author %>
 " Neovim template: Nate Soares (http://so8r.es)
 
 " The main ideas of this template are as follows:
@@ -25,7 +25,7 @@ if exists('syntax_on')
 endif
 
 " Tell them our name.
-let g:colors_name = 'base16-atelier-cave'
+let g:colors_name = 'base16-<%- schemeSlug %>'
 
 
 " The Color Dictionary -------------------------------------------------------
@@ -36,22 +36,22 @@ let g:colors_name = 'base16-atelier-cave'
 "
 " dark3 is the darkest grey; light3 is the lightest grey.
 let g:base16_hex_colors = {
-      \ 'black':  '#19171c',
-      \ 'dark3':  '#26232a',
-      \ 'dark2':  '#585260',
-      \ 'dark1':  '#655f6d',
-      \ 'light1': '#7e7887',
-      \ 'light2': '#8b8792',
-      \ 'light3': '#e2dfe7',
-      \ 'white':  '#efecf4',
-      \ 'red':    '#be4678',
-      \ 'orange': '#aa573c',
-      \ 'yellow': '#a06e3b',
-      \ 'green':  '#2a9292',
-      \ 'aqua':   '#398bc6',
-      \ 'blue':   '#576ddb',
-      \ 'purple': '#955ae7',
-      \ 'brown':  '#bf40bf'}
+      \ 'black':  '#<%- base["00"]["hex"] %>',
+      \ 'dark3':  '#<%- base["01"]["hex"] %>',
+      \ 'dark2':  '#<%- base["02"]["hex"] %>',
+      \ 'dark1':  '#<%- base["03"]["hex"] %>',
+      \ 'light1': '#<%- base["04"]["hex"] %>',
+      \ 'light2': '#<%- base["05"]["hex"] %>',
+      \ 'light3': '#<%- base["06"]["hex"] %>',
+      \ 'white':  '#<%- base["07"]["hex"] %>',
+      \ 'red':    '#<%- base["08"]["hex"] %>',
+      \ 'orange': '#<%- base["09"]["hex"] %>',
+      \ 'yellow': '#<%- base["0A"]["hex"] %>',
+      \ 'green':  '#<%- base["0B"]["hex"] %>',
+      \ 'aqua':   '#<%- base["0C"]["hex"] %>',
+      \ 'blue':   '#<%- base["0D"]["hex"] %>',
+      \ 'purple': '#<%- base["0E"]["hex"] %>',
+      \ 'brown':  '#<%- base["0F"]["hex"] %>'}
 
 let g:base16_cterm_colors = {
       \ 'black':  0,
@@ -341,7 +341,7 @@ endif
 
 " Airline config. ------------------------------------------------------------
 if get(g:, 'base16_airline', 0)
-  let s:scheme = substitute('atelier-cave', '-', '_', 'g')
+  let s:scheme = substitute('<%- schemeSlug %>', '-', '_', 'g')
 
   let g:airline#themes#base16_{s:scheme}#palette = {}
   let s:N1   = [ g:base16_hex_colors['dark3'], g:base16_hex_colors['green'], g:base16_cterm_colors['dark3'], g:base16_cterm_colors['green'] ]
@@ -394,4 +394,3 @@ if get(g:, 'base16_airline', 0)
 
   unlet s:scheme
 endif
-

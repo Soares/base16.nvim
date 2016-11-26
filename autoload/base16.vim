@@ -1,6 +1,6 @@
 " This is the function that implements the Base16Highlight command.
 function! base16#highlight(bang, group, ...)
-  if !exists('g:base16_color_dict')
+  if !exists('g:base16_hex_colors')
     echohl ErrorMsg
     echomsg 'You must apply a base16 colorscheme before using Base16Highlight'
     echohl None
@@ -11,18 +11,20 @@ function! base16#highlight(bang, group, ...)
   let l:sp = 0
   let l:attrs = []
   for l:arg in a:000
-    if l:arg =~# 'fg='
+    if l:arg =~? '^fg='
       let l:fg = 1
-      let l:color = s:Color(l:arg[3:])
-      execute 'highlight' a:group 'guifg='.l:color
-    elseif l:arg =~# 'bg='
+      let [l:gui, l:cterm] = s:Color(l:arg[3:])
+      execute 'highlight' a:group 'guifg='.l:gui
+      execute 'highlight' a:group 'ctermfg='.l:cterm
+    elseif l:arg =~? '^bg='
       let l:bg = 1
-      let l:color = s:Color(l:arg[3:])
-      execute 'highlight' a:group 'guibg='.l:color
-    elseif l:arg =~# 'sp='
+      let [l:gui, l:cterm] = s:Color(l:arg[3:])
+      execute 'highlight' a:group 'guibg='.l:gui
+      execute 'highlight' a:group 'ctermbg='.l:cterm
+    elseif l:arg =~? '^sp='
       let l:sp = 1
-      let l:color = s:Color(l:arg[3:])
-      execute 'highlight' a:group 'guisp='.l:color
+      let [l:gui, l:cterm] = s:Color(l:arg[3:])
+      execute 'highlight' a:group 'guisp='.l:gui
     else
       call add(l:attrs, l:arg)
     endif
@@ -52,15 +54,15 @@ endfunction
 " wants vim to have a transparent background so that the terminal image
 " / transparency will show through).
 function! s:Color(color)
-  if a:color == 'bg' || a:color == 'background' || a:color == 'fg' || a:color == 'foreground'
-    return a:color
+  if a:color =~? '^\(bg\|fg\|background\|foreground\)$'
+    return [a:color, 'NONE']
   endif
   try
-    return g:base16_color_dict[a:color]
+    return [g:base16_hex_colors[a:color], g:base16_cterm_colors[a:color]]
   catch /E716:/
     echohl ErrorMsg
     echomsg 'unrecognized color:' a:color
     echohl None
-    return g:base16_color_dict['antibase']
+    return [g:base16_hex_colors['antibase'], g:base16_cterm_colors['antibase']]
   endtry
 endfunction
