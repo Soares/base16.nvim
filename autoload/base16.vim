@@ -55,7 +55,7 @@ endfunction
 " / transparency will show through).
 function! s:Color(color)
   if a:color =~? '^\(bg\|fg\|background\|foreground\)$'
-    return [a:color, 'NONE']
+    return [a:color, a:color]
   endif
   try
     return [g:base16_hex_colors[a:color], g:base16_cterm_colors[a:color]]

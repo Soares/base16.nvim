@@ -7,6 +7,9 @@ base16-contents	base16.txt	/*base16-contents*
 base16-intro	base16.txt	/*base16-intro*
 base16.txt	base16.txt	/*base16.txt*
 base16.vim	base16.txt	/*base16.vim*
+g:base16_airline	base16.txt	/*g:base16_airline*
 g:base16_color_modifiers	base16.txt	/*g:base16_color_modifiers*
 g:base16_color_overrides	base16.txt	/*g:base16_color_overrides*
+g:base16_cterm_colors	base16.txt	/*g:base16_cterm_colors*
+g:base16_hex_colors	base16.txt	/*g:base16_hex_colors*
 g:base16_transparent_background	base16.txt	/*g:base16_transparent_background*
