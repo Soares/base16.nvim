@@ -64,7 +64,7 @@ The current available color schemes are
     phd
     pop
     railscasts
-		redscreen
+    redscreen
     royal
     seti
     shapeshifter
