@@ -367,35 +367,35 @@ if get(g:, 'base16_airline', 0)
   unlet s:N1 s:N2 s:N3
 
   let s:I1   = s:airlist('dark3', 'blue')
-  let s:I2   = s:airlist('contrast3', 'similar1')
-  let s:I3   = s:airlist('blue', 'similar2')
+  let s:I2   = s:airlist('similar2', 'contrast1')
+  let s:I3   = s:airlist('blue', 'contrast2')
   let g:airline#themes#{s:palette}#palette.insert = airline#themes#generate_color_map(s:I1, s:I2, s:I3)
   let g:airline#themes#{s:palette}#palette.insert.airline_warning = s:airlist('black', 'orange')
   let g:airline#themes#{s:palette}#palette.insert.airline_error = s:airlist('black', 'red')
   unlet s:I1 s:I2 s:I3
 
   let s:R1   = s:airlist('dark3', 'red')
-  let s:R2   = s:airlist('contrast3', 'similar1')
-  let s:R3   = s:airlist('orange', 'similar2')
+  let s:R2   = s:airlist('similar2', 'contrast1')
+  let s:R3   = s:airlist('red', 'contrast2')
   let g:airline#themes#{s:palette}#palette.replace = airline#themes#generate_color_map(s:R1, s:R2, s:R3)
   let g:airline#themes#{s:palette}#palette.replace.airline_warning = s:airlist('black', 'orange')
   let g:airline#themes#{s:palette}#palette.replace.airline_error = s:airlist('black', 'red')
   unlet s:R1 s:R2 s:R3
 
-  let s:V1   = s:airlist('dark3', 'purple')
-  let s:V2   = s:airlist('contrast3', 'similar1')
-  let s:V3   = s:airlist('purple', 'similar2')
+  let s:V1   = s:airlist('light3', 'purple')
+  let s:V2   = s:airlist('similar2', 'contrast1')
+  let s:V3   = s:airlist('purple', 'contrast2')
   let g:airline#themes#{s:palette}#palette.visual = airline#themes#generate_color_map(s:V1, s:V2, s:V3)
   let g:airline#themes#{s:palette}#palette.visual.airline_warning = s:airlist('black', 'orange')
   let g:airline#themes#{s:palette}#palette.visual.airline_error = s:airlist('black', 'red')
   unlet s:V1 s:V2 s:V3
 
-  let s:IA1   = s:airlist('contrast2', 'similar2')
-  let s:IA2   = s:airlist('contrast2', 'similar2')
-  let s:IA3   = s:airlist('contrast2', 'similar2')
+  let s:IA1   = s:airlist('similar1', 'similar2')
+  let s:IA2   = s:airlist('similar1', 'similar2')
+  let s:IA3   = s:airlist('similar1', 'similar2')
   let g:airline#themes#{s:palette}#palette.inactive = airline#themes#generate_color_map(s:IA1, s:IA2, s:IA3)
-  let g:airline#themes#{s:palette}#palette.inactive.airline_warning = s:airlist('black', 'orange')
-  let g:airline#themes#{s:palette}#palette.inactive.airline_error = s:airlist('black', 'red')
+  let g:airline#themes#{s:palette}#palette.inactive.airline_warning = s:airlist('base', 'contrast3')
+  let g:airline#themes#{s:palette}#palette.inactive.airline_error = s:airlist('base', 'antibase')
   unlet s:IA1 s:IA2 s:IA3
 
   let g:airline#themes#{s:palette}#palette.accents = {
