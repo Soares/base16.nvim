@@ -15,11 +15,26 @@ CONTENTS						*base16-contents*
 INTRODUCTION					*base16-intro*
 
 A whole bunch of color schemes for neovim. They are pretty, configurable, and
-work well with neovim's terminal emulator. You will need |termguicolors| set to
-1 in order to use them properly.
+work well with neovim's terminal emulator.
 
-Whether you get a light or a dark scheme depends on the setting of
-|background|. You may change color schemes on the fly.
+If |termguicolors| is set, these themes will Just Work, and they'll also set
+up your neovim terminal emulator with a colorscheme to match.
+
+If |termguicolors| is not set, then all these themes will fall back on the
+host terminal's color scheme, you'll need to set that to the base16 theme you
+want (using, e.g., the chriskempson/base16-shell repo on github). In that
+case, the colors in the scheme will be ignored.  Once neovim issue #5668 is
+fixed, this scheme will be able to offer the ability to change themes (from
+within vim, without touching the terminal profile yourself) on the fly. Right
+now, though, if you want to change themes on the fly, you need to
+>
+	set termguicolors
+<
+
+For airline support,
+>
+	let g:base16_airline = 1
+<
 
 The current list of available color schemes is:
 
@@ -80,6 +95,10 @@ yesterday
 yesterday-bright
 yesterday-night
 
+						*g:base16_hex_colors*
+						*g:base16_cterm_colors*
+The colors used are exposed by the dictionaries |g:base16_hex_colors| and
+|g:base16_cterm_colors|.
 
 ==============================================================================
 CONFIGURATION					*base16-config*
@@ -139,6 +158,11 @@ schemes, which would be quite annoying.
 					*g:base16_transparent_background*
 Set this to 1 if you don't want nvim painting a background (i.e., if you want
 to use terminal transparency and/or terminal background images).
+
+					*g:base16_airline*
+Set this to 1 if you want an airline theme. (It would be nice to do
+auto-detect airline, but the colorscheme will likely run before the plugins
+load, so we can't check g:loaded_airline. Sorry.)
 
 
 ==============================================================================
