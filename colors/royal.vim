@@ -1,5 +1,5 @@
-" Base16 Blue Screen (https://github.com/chriskempson/base16)
-" Scheme: Nate Soares (http://so8r.es), adapted from Chris Kempson (http://chriskempson.com)
+" Base16 Royal (https://github.com/chriskempson/base16)
+" Scheme: Nate Soares (http://so8r.es)
 " Neovim template: Nate Soares (http://so8r.es)
 
 " The main ideas of this template are as follows:
@@ -37,7 +37,7 @@ if exists('syntax_on')
 endif
 
 " Tell them our name.
-let g:colors_name = 'base16-blue-screen'
+let g:colors_name = 'base16-royal'
 
 
 " The Color Dictionary -------------------------------------------------------
@@ -48,22 +48,22 @@ let g:colors_name = 'base16-blue-screen'
 "
 " dark3 is the darkest grey; light3 is the lightest grey.
 let g:base16_color_dict = {
-      \ 'black':  '#000011',
-      \ 'dark3':  '#000033',
-      \ 'dark2':  '#000055',
-      \ 'dark1':  '#000077',
-      \ 'light1': '#000099',
-      \ 'light2': '#0000bb',
-      \ 'light3': '#0000dd',
-      \ 'white':  '#0000ff',
-      \ 'red':    '#000077',
-      \ 'orange': '#000099',
-      \ 'yellow': '#000077',
-      \ 'green':  '#0000bb',
-      \ 'aqua':   '#000055',
-      \ 'blue':   '#000099',
-      \ 'purple': '#0000bb',
-      \ 'brown':  '#000055'}
+      \ 'black':  '#110011',
+      \ 'dark3':  '#330033',
+      \ 'dark2':  '#550055',
+      \ 'dark1':  '#770077',
+      \ 'light1': '#990099',
+      \ 'light2': '#bb00bb',
+      \ 'light3': '#dd00dd',
+      \ 'white':  '#ff00ff',
+      \ 'red':    '#770077',
+      \ 'orange': '#990099',
+      \ 'yellow': '#770077',
+      \ 'green':  '#bb00bb',
+      \ 'aqua':   '#550055',
+      \ 'blue':   '#990099',
+      \ 'purple': '#bb00bb',
+      \ 'brown':  '#550055'}
 
 " The extra colors that you have at your disposal are:
 " base similar3 similar2, similar1, contrast1, contrast2, contrast3 antibase.

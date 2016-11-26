@@ -1,4 +1,4 @@
-" Base16 Blue Screen (https://github.com/chriskempson/base16)
+" Base16 Red Screen (https://github.com/chriskempson/base16)
 " Scheme: Nate Soares (http://so8r.es), adapted from Chris Kempson (http://chriskempson.com)
 " Neovim template: Nate Soares (http://so8r.es)
 
@@ -37,7 +37,7 @@ if exists('syntax_on')
 endif
 
 " Tell them our name.
-let g:colors_name = 'base16-blue-screen'
+let g:colors_name = 'base16-red-screen'
 
 
 " The Color Dictionary -------------------------------------------------------
