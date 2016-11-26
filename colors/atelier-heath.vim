@@ -388,6 +388,14 @@ let s:IA2   = [ s:gui05, s:gui01, s:cterm05, s:cterm01 ]
 let s:IA3   = [ s:gui05, s:gui01, s:cterm05, s:cterm01 ]
 let g:airline#themes#base16_{s:scheme}#palette.inactive = airline#themes#generate_color_map(s:IA1, s:IA2, s:IA3)
 
+let g:airline#themes#base16_{s:scheme}#palette.accents = {
+        \ 'red': [ s:gui08, '', s:cterm08, ''],
+        \ 'green': [ s:gui0B, '', s:cterm0B, ''],
+        \ 'blue': [ s:gui0D, '', s:cterm0D, ''],
+        \ 'yellow': [ s:gui0A, '', s:cterm0A, ''],
+        \ 'orange': [ s:gui09, '', s:cterm09, ''],
+        \ 'purple': [ s:gui0E, '', s:cterm0E, '']}
+
 unlet s:gui00 s:gui01 s:gui02 s:gui03 s:gui04 s:gui05 s:gui06 s:gui07
 unlet s:gui08 s:gui09 s:gui0A s:gui0B s:gui0C s:gui0D s:gui0E s:gui0F
 unlet s:cterm00 s:cterm01 s:cterm02 s:cterm03 s:cterm04 s:cterm05 s:cterm06 s:cterm07
