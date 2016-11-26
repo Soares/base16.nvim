@@ -19,6 +19,7 @@
 "    a transparent background or a background image).
 
 " Boilerplate: clear existing highlighting, reset the syntax, etc.
+highlight clear
 if exists('syntax_on')
   syntax reset
 endif
