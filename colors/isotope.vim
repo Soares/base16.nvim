@@ -349,6 +349,7 @@ endif
 " Airline config. ------------------------------------------------------------
 if get(g:, 'base16_airline', 0)
   let s:palette = substitute('isotope', '-', '_', 'g').'_'.&background
+  let g:airline#themes#{s:palette}#palette = {}
   function! s:airlist(fg, bg)
     return [
           \ g:base16_hex_colors[a:fg],
@@ -357,7 +358,6 @@ if get(g:, 'base16_airline', 0)
           \ g:base16_cterm_colors[a:bg]]
   endfunction
 
-  let g:airline#themes#{s:palette}#palette = {}
   let s:N1   = s:airlist('dark3', 'green')
   let s:N2   = s:airlist('contrast3', 'similar1')
   let s:N3   = s:airlist('contrast3', 'similar2')
@@ -365,6 +365,14 @@ if get(g:, 'base16_airline', 0)
   let g:airline#themes#{s:palette}#palette.normal.airline_warning = s:airlist('black', 'orange')
   let g:airline#themes#{s:palette}#palette.normal.airline_error = s:airlist('black', 'red')
   unlet s:N1 s:N2 s:N3
+
+  let s:T1   = s:airlist('green', 'dark3')
+  let s:T2   = s:airlist('contrast3', 'similar1')
+  let s:T3   = s:airlist('dark3', 'green')
+  let g:airline#themes#{s:palette}#palette.terminal = airline#themes#generate_color_map(s:T1, s:T2, s:T3)
+  let g:airline#themes#{s:palette}#palette.terminal.airline_warning = s:airlist('black', 'orange')
+  let g:airline#themes#{s:palette}#palette.terminal.airline_error = s:airlist('black', 'red')
+  unlet s:T1 s:T2 s:T3
 
   let s:I1   = s:airlist('dark3', 'blue')
   let s:I2   = s:airlist('similar2', 'contrast1')
