@@ -1,4 +1,4 @@
-" Base16 Red Screen (https://github.com/chriskempson/base16)
+" Base16 Redscreen (https://github.com/chriskempson/base16)
 " Scheme: Nate Soares (http://so8r.es), adapted from Chris Kempson (http://chriskempson.com)
 " Neovim template: Nate Soares (http://so8r.es)
 
@@ -24,7 +24,7 @@ if exists('syntax_on')
 endif
 
 " Tell them our name.
-let g:colors_name = 'red-screen'
+let g:colors_name = 'redscreen'
 
 
 " The Color Dictionary -------------------------------------------------------
@@ -348,7 +348,7 @@ endif
 
 " Airline config. ------------------------------------------------------------
 if get(g:, 'base16_airline', 0)
-  let s:palette = substitute('red-screen', '-', '_', 'g').'_'.&background
+  let s:palette = substitute('redscreen', '-', '_', 'g').'_'.&background
   function! s:airlist(fg, bg)
     return [
           \ g:base16_hex_colors[a:fg],
