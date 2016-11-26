@@ -341,12 +341,12 @@ endif
 
 " Airline config. ------------------------------------------------------------
 if get(g:, 'base16_airline', 0)
-  let s:scheme = substitute('atelier-cave', '-', '_', 'g')
+  let s:scheme = substitute('summerfruit', '-', '_', 'g')
 
   let g:airline#themes#base16_{s:scheme}#palette = {}
   let s:N1   = [ g:base16_hex_colors['dark3'], g:base16_hex_colors['green'], g:base16_cterm_colors['dark3'], g:base16_cterm_colors['green'] ]
-  let s:N2   = [ g:base16_hex_colors['light3'], g:base16_hex_colors['dark2'], g:base16_cterm_colors['light3'], g:base16_cterm_colors['dark2'] ]
-  let s:N3   = [ g:base16_hex_colors['orange'], g:base16_hex_colors['dark3'], g:base16_cterm_colors['orange'], g:base16_cterm_colors['dark3'] ]
+  let s:N2   = [ g:base16_hex_colors['contrast3'], g:base16_hex_colors['similar2'], g:base16_cterm_colors['contrast3'], g:base16_cterm_colors['similar2'] ]
+  let s:N3   = [ g:base16_hex_colors['aqua'], g:base16_hex_colors['similar3'], g:base16_cterm_colors['aqua'], g:base16_cterm_colors['similar3'] ]
   let g:airline#themes#base16_{s:scheme}#palette.normal = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
   let g:airline#themes#base16_{s:scheme}#palette.normal.airline_warning = [ g:base16_hex_colors['black'], g:base16_hex_colors['yellow'], g:base16_cterm_colors['black'], g:base16_cterm_colors['yellow'] ]
   let g:airline#themes#base16_{s:scheme}#palette.normal.airline_error = [ g:base16_hex_colors['black'], g:base16_hex_colors['red'], g:base16_cterm_colors['black'], g:base16_cterm_colors['red'] ]
