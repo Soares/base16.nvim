@@ -58,7 +58,7 @@ endfunction
 " wants vim to have a transparent background so that the terminal image
 " / transparency will show through).
 function! s:Color(color)
-  if a:color =~? '^\(bg\|fg\|background\|foreground\)$'
+  if a:color =~? '^\(bg\|fg\|background\|foreground\|none\)$'
     return [a:color, a:color]
   endif
   try
