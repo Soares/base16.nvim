@@ -15,12 +15,16 @@ function! base16#highlight(bang, group, ...)
       let l:fg = 1
       let [l:gui, l:cterm] = s:Color(l:arg[3:])
       execute 'highlight' a:group 'guifg='.l:gui
-      execute 'highlight' a:group 'ctermfg='.l:cterm
+      if !has('termguicolors') || !&termguicolors
+        execute 'highlight' a:group 'ctermfg='.l:cterm
+      endif
     elseif l:arg =~? '^bg='
       let l:bg = 1
       let [l:gui, l:cterm] = s:Color(l:arg[3:])
       execute 'highlight' a:group 'guibg='.l:gui
-      execute 'highlight' a:group 'ctermbg='.l:cterm
+      if !has('termguicolors') || !&termguicolors
+        execute 'highlight' a:group 'ctermbg='.l:cterm
+      endif
     elseif l:arg =~? '^sp='
       let l:sp = 1
       let [l:gui, l:cterm] = s:Color(l:arg[3:])
