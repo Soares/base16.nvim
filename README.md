@@ -16,8 +16,7 @@ The main features of these color schemes are:
 Install this plugin in the usual way (with vim-plug or vundle or whatever). You
 will need to either `set termguicolors=1` or use something like
 [base16 shell](https://github.com/chriskempson/base16-shell) to set your
-terminal colors to your preferred base16 color scheme. For airline support,
-`let g:base16_airline=1`.
+terminal colors to your preferred base16 color scheme.
 
 The current available color schemes are
 

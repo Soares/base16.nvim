@@ -31,11 +31,6 @@ now, though, if you want to change themes on the fly, you need to
 	set termguicolors
 <
 
-For airline support,
->
-	let g:base16_airline = 1
-<
-
 The current list of available color schemes is:
 
 3024
@@ -158,11 +153,6 @@ schemes, which would be quite annoying.
 					*g:base16_transparent_background*
 Set this to 1 if you don't want nvim painting a background (i.e., if you want
 to use terminal transparency and/or terminal background images).
-
-					*g:base16_airline*
-Set this to 1 if you want an airline theme. (It would be nice to do
-auto-detect airline, but the colorscheme will likely run before the plugins
-load, so we can't check g:loaded_airline. Sorry.)
 
 
 ==============================================================================
