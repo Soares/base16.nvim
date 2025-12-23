@@ -1,0 +1,50 @@
+# $scheme dark theme
+background #$dark_base00
+foreground #$dark_base05
+
+cursor #$dark_base05
+cursor_text_color #$dark_base00
+
+selection_background #$dark_base02
+selection_foreground #$dark_base05
+
+url_color #$dark_base0D
+
+# tab bar
+tab_bar_background #$dark_base01
+active_tab_background #$dark_base03
+active_tab_foreground #$dark_base07
+inactive_tab_background #$dark_base01
+inactive_tab_foreground #$dark_base03
+
+# black
+color0  #$dark_base00
+color8  #$dark_base03
+
+# red
+color1  #$dark_base08
+color9  #$dark_base08
+
+# green
+color2  #$dark_base0B
+color10 #$dark_base0B
+
+# yellow
+color3  #$dark_base0A
+color11 #$dark_base0A
+
+# blue
+color4  #$dark_base0D
+color12 #$dark_base0D
+
+# magenta
+color5  #$dark_base0E
+color13 #$dark_base0E
+
+# cyan
+color6  #$dark_base0C
+color14 #$dark_base0C
+
+# white
+color7  #$dark_base05
+color15 #$dark_base07

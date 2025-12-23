@@ -1,0 +1,39 @@
+# Embers dark theme
+# syntax highlighting variables
+# https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
+fish_color_normal A39A90
+fish_color_command 82576D
+fish_color_keyword 576D82
+fish_color_quote 6D8257
+fish_color_redirection 6D5782
+fish_color_end 8A8075
+fish_color_error 826D57
+fish_color_param 828257
+fish_color_comment 5A5047
+fish_color_selection --reverse
+fish_color_operator A39A90
+fish_color_escape 6D5782
+fish_color_autosuggestion 5A5047
+fish_color_cwd 828257
+fish_color_user 6D8257
+fish_color_host 576D82
+fish_color_host_remote 82576D
+fish_color_cancel A39A90
+fish_color_search_match --background=16130F
+fish_color_valid_path
+
+# pager color variables
+# https://fishshell.com/docs/current/interactive.html#pager-color-variables
+fish_pager_color_progress 828257
+fish_pager_color_background --background=2C2620
+fish_pager_color_prefix 576D82
+fish_pager_color_completion 8A8075
+fish_pager_color_description 8A8075
+fish_pager_color_secondary_background
+fish_pager_color_secondary_prefix
+fish_pager_color_secondary_completion
+fish_pager_color_secondary_description
+fish_pager_color_selected_background --background=433B32
+fish_pager_color_selected_prefix 576D82
+fish_pager_color_selected_completion A39A90
+fish_pager_color_selected_description A39A90

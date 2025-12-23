@@ -1,0 +1,39 @@
+# $scheme dark theme
+# syntax highlighting variables
+# https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
+fish_color_normal $dark_base05
+fish_color_command $dark_base0E
+fish_color_keyword $dark_base0C
+fish_color_quote $dark_base0A
+fish_color_redirection $dark_base0D
+fish_color_end $dark_base04
+fish_color_error $dark_base08
+fish_color_param $dark_base09
+fish_color_comment $dark_base03
+fish_color_selection --reverse
+fish_color_operator $dark_base05
+fish_color_escape $dark_base0D
+fish_color_autosuggestion $dark_base03
+fish_color_cwd $dark_base09
+fish_color_user $dark_base0A
+fish_color_host $dark_base0C
+fish_color_host_remote $dark_base0E
+fish_color_cancel $dark_base05
+fish_color_search_match --background=$dark_base00
+fish_color_valid_path
+
+# pager color variables
+# https://fishshell.com/docs/current/interactive.html#pager-color-variables
+fish_pager_color_progress $dark_base09
+fish_pager_color_background --background=$dark_base01
+fish_pager_color_prefix $dark_base0C
+fish_pager_color_completion $dark_base04
+fish_pager_color_description $dark_base04
+fish_pager_color_secondary_background
+fish_pager_color_secondary_prefix
+fish_pager_color_secondary_completion
+fish_pager_color_secondary_description
+fish_pager_color_selected_background --background=$dark_base02
+fish_pager_color_selected_prefix $dark_base0C
+fish_pager_color_selected_completion $dark_base05
+fish_pager_color_selected_description $dark_base05

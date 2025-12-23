@@ -1,0 +1,39 @@
+# Eighties light theme
+# syntax highlighting variables
+# https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
+fish_color_normal 2d2d2d
+fish_color_command cc99cc
+fish_color_keyword 66cccc
+fish_color_quote ffcc66
+fish_color_redirection 6699cc
+fish_color_end a09f93
+fish_color_error f2777a
+fish_color_param f99157
+fish_color_comment 747369
+fish_color_selection --reverse
+fish_color_operator 2d2d2d
+fish_color_escape 6699cc
+fish_color_autosuggestion 747369
+fish_color_cwd f99157
+fish_color_user ffcc66
+fish_color_host 66cccc
+fish_color_host_remote cc99cc
+fish_color_cancel 2d2d2d
+fish_color_search_match --background=f2f0ec
+fish_color_valid_path
+
+# pager color variables
+# https://fishshell.com/docs/current/interactive.html#pager-color-variables
+fish_pager_color_progress f99157
+fish_pager_color_background --background=e8e6df
+fish_pager_color_prefix 66cccc
+fish_pager_color_completion a09f93
+fish_pager_color_description a09f93
+fish_pager_color_secondary_background
+fish_pager_color_secondary_prefix
+fish_pager_color_secondary_completion
+fish_pager_color_secondary_description
+fish_pager_color_selected_background --background=d3d0c8
+fish_pager_color_selected_prefix 66cccc
+fish_pager_color_selected_completion 2d2d2d
+fish_pager_color_selected_description 2d2d2d

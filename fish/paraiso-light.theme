@@ -1,0 +1,39 @@
+# Paraiso light theme
+# syntax highlighting variables
+# https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
+fish_color_normal 2f1e2e
+fish_color_command 815ba4
+fish_color_keyword 5bc4bf
+fish_color_quote fec418
+fish_color_redirection 06b6ef
+fish_color_end 8d8687
+fish_color_error ef6155
+fish_color_param f99b15
+fish_color_comment 776e71
+fish_color_selection --reverse
+fish_color_operator 2f1e2e
+fish_color_escape 06b6ef
+fish_color_autosuggestion 776e71
+fish_color_cwd f99b15
+fish_color_user fec418
+fish_color_host 5bc4bf
+fish_color_host_remote 815ba4
+fish_color_cancel 2f1e2e
+fish_color_search_match --background=e7e9db
+fish_color_valid_path
+
+# pager color variables
+# https://fishshell.com/docs/current/interactive.html#pager-color-variables
+fish_pager_color_progress f99b15
+fish_pager_color_background --background=b9b6b0
+fish_pager_color_prefix 5bc4bf
+fish_pager_color_completion 8d8687
+fish_pager_color_description 8d8687
+fish_pager_color_secondary_background
+fish_pager_color_secondary_prefix
+fish_pager_color_secondary_completion
+fish_pager_color_secondary_description
+fish_pager_color_selected_background --background=a39e9b
+fish_pager_color_selected_prefix 5bc4bf
+fish_pager_color_selected_completion 2f1e2e
+fish_pager_color_selected_description 2f1e2e

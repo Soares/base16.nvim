@@ -1,0 +1,39 @@
+# Catppuccin light theme
+# syntax highlighting variables
+# https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
+fish_color_normal 4c4f69
+fish_color_command 8839ef
+fish_color_keyword 179299
+fish_color_quote df8e1d
+fish_color_redirection 1e66f5
+fish_color_end bcc0cc
+fish_color_error d20f39
+fish_color_param fe640b
+fish_color_comment acb0be
+fish_color_selection --reverse
+fish_color_operator 4c4f69
+fish_color_escape 1e66f5
+fish_color_autosuggestion acb0be
+fish_color_cwd fe640b
+fish_color_user df8e1d
+fish_color_host 179299
+fish_color_host_remote 8839ef
+fish_color_cancel 4c4f69
+fish_color_search_match --background=eff1f5
+fish_color_valid_path
+
+# pager color variables
+# https://fishshell.com/docs/current/interactive.html#pager-color-variables
+fish_pager_color_progress fe640b
+fish_pager_color_background --background=e6e9ef
+fish_pager_color_prefix 179299
+fish_pager_color_completion bcc0cc
+fish_pager_color_description bcc0cc
+fish_pager_color_secondary_background
+fish_pager_color_secondary_prefix
+fish_pager_color_secondary_completion
+fish_pager_color_secondary_description
+fish_pager_color_selected_background --background=ccd0da
+fish_pager_color_selected_prefix 179299
+fish_pager_color_selected_completion 4c4f69
+fish_pager_color_selected_description 4c4f69

@@ -1,0 +1,39 @@
+# Darktooth light theme
+# syntax highlighting variables
+# https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
+fish_color_normal 1D2021
+fish_color_command 8F4673
+fish_color_keyword 8BA59B
+fish_color_quote FAC03B
+fish_color_redirection 0D6678
+fish_color_end 928374
+fish_color_error FB543F
+fish_color_param FE8625
+fish_color_comment 665C54
+fish_color_selection --reverse
+fish_color_operator 1D2021
+fish_color_escape 0D6678
+fish_color_autosuggestion 665C54
+fish_color_cwd FE8625
+fish_color_user FAC03B
+fish_color_host 8BA59B
+fish_color_host_remote 8F4673
+fish_color_cancel 1D2021
+fish_color_search_match --background=FDF4C1
+fish_color_valid_path
+
+# pager color variables
+# https://fishshell.com/docs/current/interactive.html#pager-color-variables
+fish_pager_color_progress FE8625
+fish_pager_color_background --background=D5C4A1
+fish_pager_color_prefix 8BA59B
+fish_pager_color_completion 928374
+fish_pager_color_description 928374
+fish_pager_color_secondary_background
+fish_pager_color_secondary_prefix
+fish_pager_color_secondary_completion
+fish_pager_color_secondary_description
+fish_pager_color_selected_background --background=A89984
+fish_pager_color_selected_prefix 8BA59B
+fish_pager_color_selected_completion 1D2021
+fish_pager_color_selected_description 1D2021

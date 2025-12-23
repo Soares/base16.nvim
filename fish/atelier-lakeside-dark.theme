@@ -1,0 +1,39 @@
+# Atelier Lakeside dark theme
+# syntax highlighting variables
+# https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
+fish_color_normal 7ea2b4
+fish_color_command 6b6bb8
+fish_color_keyword 2d8f6f
+fish_color_quote 8a8a0f
+fish_color_redirection 257fad
+fish_color_end 7195a8
+fish_color_error d22d72
+fish_color_param 935c25
+fish_color_comment 5a7b8c
+fish_color_selection --reverse
+fish_color_operator 7ea2b4
+fish_color_escape 257fad
+fish_color_autosuggestion 5a7b8c
+fish_color_cwd 935c25
+fish_color_user 8a8a0f
+fish_color_host 2d8f6f
+fish_color_host_remote 6b6bb8
+fish_color_cancel 7ea2b4
+fish_color_search_match --background=161b1d
+fish_color_valid_path
+
+# pager color variables
+# https://fishshell.com/docs/current/interactive.html#pager-color-variables
+fish_pager_color_progress 935c25
+fish_pager_color_background --background=1f292e
+fish_pager_color_prefix 2d8f6f
+fish_pager_color_completion 7195a8
+fish_pager_color_description 7195a8
+fish_pager_color_secondary_background
+fish_pager_color_secondary_prefix
+fish_pager_color_secondary_completion
+fish_pager_color_secondary_description
+fish_pager_color_selected_background --background=516d7b
+fish_pager_color_selected_prefix 2d8f6f
+fish_pager_color_selected_completion 7ea2b4
+fish_pager_color_selected_description 7ea2b4

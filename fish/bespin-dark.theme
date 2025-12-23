@@ -1,0 +1,39 @@
+# Bespin dark theme
+# syntax highlighting variables
+# https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
+fish_color_normal 8a8986
+fish_color_command 9b859d
+fish_color_keyword afc4db
+fish_color_quote f9ee98
+fish_color_redirection 5ea6ea
+fish_color_end 797977
+fish_color_error cf6a4c
+fish_color_param cf7d34
+fish_color_comment 666666
+fish_color_selection --reverse
+fish_color_operator 8a8986
+fish_color_escape 5ea6ea
+fish_color_autosuggestion 666666
+fish_color_cwd cf7d34
+fish_color_user f9ee98
+fish_color_host afc4db
+fish_color_host_remote 9b859d
+fish_color_cancel 8a8986
+fish_color_search_match --background=28211c
+fish_color_valid_path
+
+# pager color variables
+# https://fishshell.com/docs/current/interactive.html#pager-color-variables
+fish_pager_color_progress cf7d34
+fish_pager_color_background --background=36312e
+fish_pager_color_prefix afc4db
+fish_pager_color_completion 797977
+fish_pager_color_description 797977
+fish_pager_color_secondary_background
+fish_pager_color_secondary_prefix
+fish_pager_color_secondary_completion
+fish_pager_color_secondary_description
+fish_pager_color_selected_background --background=5e5d5c
+fish_pager_color_selected_prefix afc4db
+fish_pager_color_selected_completion 8a8986
+fish_pager_color_selected_description 8a8986

@@ -1,0 +1,39 @@
+# Twilight light theme
+# syntax highlighting variables
+# https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
+fish_color_normal 1e1e1e
+fish_color_command 9b859d
+fish_color_keyword afc4db
+fish_color_quote f9ee98
+fish_color_redirection 7587a6
+fish_color_end 838184
+fish_color_error cf6a4c
+fish_color_param cda869
+fish_color_comment 5f5a60
+fish_color_selection --reverse
+fish_color_operator 1e1e1e
+fish_color_escape 7587a6
+fish_color_autosuggestion 5f5a60
+fish_color_cwd cda869
+fish_color_user f9ee98
+fish_color_host afc4db
+fish_color_host_remote 9b859d
+fish_color_cancel 1e1e1e
+fish_color_search_match --background=ffffff
+fish_color_valid_path
+
+# pager color variables
+# https://fishshell.com/docs/current/interactive.html#pager-color-variables
+fish_pager_color_progress cda869
+fish_pager_color_background --background=c3c3c3
+fish_pager_color_prefix afc4db
+fish_pager_color_completion 838184
+fish_pager_color_description 838184
+fish_pager_color_secondary_background
+fish_pager_color_secondary_prefix
+fish_pager_color_secondary_completion
+fish_pager_color_secondary_description
+fish_pager_color_selected_background --background=a7a7a7
+fish_pager_color_selected_prefix afc4db
+fish_pager_color_selected_completion 1e1e1e
+fish_pager_color_selected_description 1e1e1e

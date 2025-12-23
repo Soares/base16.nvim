@@ -1,0 +1,39 @@
+# Seti UI dark theme
+# syntax highlighting variables
+# https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
+fish_color_normal d6d6d6
+fish_color_command a074c4
+fish_color_keyword 55dbbe
+fish_color_quote e6cd69
+fish_color_redirection 55b5db
+fish_color_end 43a5d5
+fish_color_error Cd3f45
+fish_color_param db7b55
+fish_color_comment 41535B
+fish_color_selection --reverse
+fish_color_operator d6d6d6
+fish_color_escape 55b5db
+fish_color_autosuggestion 41535B
+fish_color_cwd db7b55
+fish_color_user e6cd69
+fish_color_host 55dbbe
+fish_color_host_remote a074c4
+fish_color_cancel d6d6d6
+fish_color_search_match --background=151718
+fish_color_valid_path
+
+# pager color variables
+# https://fishshell.com/docs/current/interactive.html#pager-color-variables
+fish_pager_color_progress db7b55
+fish_pager_color_background --background=8ec43d
+fish_pager_color_prefix 55dbbe
+fish_pager_color_completion 43a5d5
+fish_pager_color_description 43a5d5
+fish_pager_color_secondary_background
+fish_pager_color_secondary_prefix
+fish_pager_color_secondary_completion
+fish_pager_color_secondary_description
+fish_pager_color_selected_background --background=3B758C
+fish_pager_color_selected_prefix 55dbbe
+fish_pager_color_selected_completion d6d6d6
+fish_pager_color_selected_description d6d6d6

@@ -1,0 +1,39 @@
+# Grayscale dark theme
+# syntax highlighting variables
+# https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
+fish_color_normal b9b9b9
+fish_color_command 747474
+fish_color_keyword 868686
+fish_color_quote a0a0a0
+fish_color_redirection 686868
+fish_color_end ababab
+fish_color_error 7c7c7c
+fish_color_param 999999
+fish_color_comment 525252
+fish_color_selection --reverse
+fish_color_operator b9b9b9
+fish_color_escape 686868
+fish_color_autosuggestion 525252
+fish_color_cwd 999999
+fish_color_user a0a0a0
+fish_color_host 868686
+fish_color_host_remote 747474
+fish_color_cancel b9b9b9
+fish_color_search_match --background=101010
+fish_color_valid_path
+
+# pager color variables
+# https://fishshell.com/docs/current/interactive.html#pager-color-variables
+fish_pager_color_progress 999999
+fish_pager_color_background --background=252525
+fish_pager_color_prefix 868686
+fish_pager_color_completion ababab
+fish_pager_color_description ababab
+fish_pager_color_secondary_background
+fish_pager_color_secondary_prefix
+fish_pager_color_secondary_completion
+fish_pager_color_secondary_description
+fish_pager_color_selected_background --background=464646
+fish_pager_color_selected_prefix 868686
+fish_pager_color_selected_completion b9b9b9
+fish_pager_color_selected_description b9b9b9

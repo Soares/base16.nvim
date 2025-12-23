@@ -1,0 +1,39 @@
+# Railscasts dark theme
+# syntax highlighting variables
+# https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
+fish_color_normal e6e1dc
+fish_color_command b6b3eb
+fish_color_keyword 519f50
+fish_color_quote ffc66d
+fish_color_redirection 6d9cbe
+fish_color_end d4cfc9
+fish_color_error da4939
+fish_color_param cc7833
+fish_color_comment 5a647e
+fish_color_selection --reverse
+fish_color_operator e6e1dc
+fish_color_escape 6d9cbe
+fish_color_autosuggestion 5a647e
+fish_color_cwd cc7833
+fish_color_user ffc66d
+fish_color_host 519f50
+fish_color_host_remote b6b3eb
+fish_color_cancel e6e1dc
+fish_color_search_match --background=2b2b2b
+fish_color_valid_path
+
+# pager color variables
+# https://fishshell.com/docs/current/interactive.html#pager-color-variables
+fish_pager_color_progress cc7833
+fish_pager_color_background --background=272935
+fish_pager_color_prefix 519f50
+fish_pager_color_completion d4cfc9
+fish_pager_color_description d4cfc9
+fish_pager_color_secondary_background
+fish_pager_color_secondary_prefix
+fish_pager_color_secondary_completion
+fish_pager_color_secondary_description
+fish_pager_color_selected_background --background=3a4055
+fish_pager_color_selected_prefix 519f50
+fish_pager_color_selected_completion e6e1dc
+fish_pager_color_selected_description e6e1dc

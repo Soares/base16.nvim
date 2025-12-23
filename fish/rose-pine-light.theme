@@ -1,0 +1,39 @@
+# Rosé Pine light theme
+# syntax highlighting variables
+# https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
+fish_color_normal 575279
+fish_color_command 907aa9
+fish_color_keyword 56949f
+fish_color_quote ea9d34
+fish_color_redirection 286983
+fish_color_end 797593
+fish_color_error b4637a
+fish_color_param d7827e
+fish_color_comment 9893a5
+fish_color_selection --reverse
+fish_color_operator 575279
+fish_color_escape 286983
+fish_color_autosuggestion 9893a5
+fish_color_cwd d7827e
+fish_color_user ea9d34
+fish_color_host 56949f
+fish_color_host_remote 907aa9
+fish_color_cancel 575279
+fish_color_search_match --background=faf4ed
+fish_color_valid_path
+
+# pager color variables
+# https://fishshell.com/docs/current/interactive.html#pager-color-variables
+fish_pager_color_progress d7827e
+fish_pager_color_background --background=fffaf3
+fish_pager_color_prefix 56949f
+fish_pager_color_completion 797593
+fish_pager_color_description 797593
+fish_pager_color_secondary_background
+fish_pager_color_secondary_prefix
+fish_pager_color_secondary_completion
+fish_pager_color_secondary_description
+fish_pager_color_selected_background --background=f2e9e1
+fish_pager_color_selected_prefix 56949f
+fish_pager_color_selected_completion 575279
+fish_pager_color_selected_description 575279

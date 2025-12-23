@@ -1,0 +1,39 @@
+# Redscreen light theme
+# syntax highlighting variables
+# https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
+fish_color_normal 110000
+fish_color_command bb0000
+fish_color_keyword 550000
+fish_color_quote 770000
+fish_color_redirection 990000
+fish_color_end 990000
+fish_color_error 770000
+fish_color_param 990000
+fish_color_comment 770000
+fish_color_selection --reverse
+fish_color_operator 110000
+fish_color_escape 990000
+fish_color_autosuggestion 770000
+fish_color_cwd 990000
+fish_color_user 770000
+fish_color_host 550000
+fish_color_host_remote bb0000
+fish_color_cancel 110000
+fish_color_search_match --background=ff0000
+fish_color_valid_path
+
+# pager color variables
+# https://fishshell.com/docs/current/interactive.html#pager-color-variables
+fish_pager_color_progress 990000
+fish_pager_color_background --background=dd0000
+fish_pager_color_prefix 550000
+fish_pager_color_completion 990000
+fish_pager_color_description 990000
+fish_pager_color_secondary_background
+fish_pager_color_secondary_prefix
+fish_pager_color_secondary_completion
+fish_pager_color_secondary_description
+fish_pager_color_selected_background --background=bb0000
+fish_pager_color_selected_prefix 550000
+fish_pager_color_selected_completion 110000
+fish_pager_color_selected_description 110000

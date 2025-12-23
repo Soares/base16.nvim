@@ -1,0 +1,39 @@
+# Atelier Forest dark theme
+# syntax highlighting variables
+# https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
+fish_color_normal a8a19f
+fish_color_command 6666ea
+fish_color_keyword 3d97b8
+fish_color_quote c38418
+fish_color_redirection 407ee7
+fish_color_end 9c9491
+fish_color_error f22c40
+fish_color_param df5320
+fish_color_comment 766e6b
+fish_color_selection --reverse
+fish_color_operator a8a19f
+fish_color_escape 407ee7
+fish_color_autosuggestion 766e6b
+fish_color_cwd df5320
+fish_color_user c38418
+fish_color_host 3d97b8
+fish_color_host_remote 6666ea
+fish_color_cancel a8a19f
+fish_color_search_match --background=1b1918
+fish_color_valid_path
+
+# pager color variables
+# https://fishshell.com/docs/current/interactive.html#pager-color-variables
+fish_pager_color_progress df5320
+fish_pager_color_background --background=2c2421
+fish_pager_color_prefix 3d97b8
+fish_pager_color_completion 9c9491
+fish_pager_color_description 9c9491
+fish_pager_color_secondary_background
+fish_pager_color_secondary_prefix
+fish_pager_color_secondary_completion
+fish_pager_color_secondary_description
+fish_pager_color_selected_background --background=68615e
+fish_pager_color_selected_prefix 3d97b8
+fish_pager_color_selected_completion a8a19f
+fish_pager_color_selected_description a8a19f

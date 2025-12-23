@@ -1,0 +1,39 @@
+# Gruvbox light theme
+# syntax highlighting variables
+# https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
+fish_color_normal 282828
+fish_color_command 8f3f71
+fish_color_keyword 427b58
+fish_color_quote b57614
+fish_color_redirection 076678
+fish_color_end bdae93
+fish_color_error 9d0006
+fish_color_param af3a03
+fish_color_comment 665c54
+fish_color_selection --reverse
+fish_color_operator 282828
+fish_color_escape 076678
+fish_color_autosuggestion 665c54
+fish_color_cwd af3a03
+fish_color_user b57614
+fish_color_host 427b58
+fish_color_host_remote 8f3f71
+fish_color_cancel 282828
+fish_color_search_match --background=fbf1c7
+fish_color_valid_path
+
+# pager color variables
+# https://fishshell.com/docs/current/interactive.html#pager-color-variables
+fish_pager_color_progress af3a03
+fish_pager_color_background --background=ebdbb2
+fish_pager_color_prefix 427b58
+fish_pager_color_completion bdae93
+fish_pager_color_description bdae93
+fish_pager_color_secondary_background
+fish_pager_color_secondary_prefix
+fish_pager_color_secondary_completion
+fish_pager_color_secondary_description
+fish_pager_color_selected_background --background=d5c4a1
+fish_pager_color_selected_prefix 427b58
+fish_pager_color_selected_completion 282828
+fish_pager_color_selected_description 282828

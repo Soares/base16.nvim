@@ -1,0 +1,50 @@
+# $scheme light theme
+background #$light_base07
+foreground #$light_base00
+
+cursor #$light_base00
+cursor_text_color #$light_base07
+
+selection_background #$light_base02
+selection_foreground #$light_base00
+
+url_color #$light_base0D
+
+# tab bar
+tab_bar_background #$light_base06
+active_tab_background #$light_base04
+active_tab_foreground #$light_base07
+inactive_tab_background #$light_base06
+inactive_tab_foreground #$light_base04
+
+# black
+color0  #$light_base00
+color8  #$light_base03
+
+# red
+color1  #$light_base08
+color9  #$light_base08
+
+# green
+color2  #$light_base0B
+color10 #$light_base0B
+
+# yellow
+color3  #$light_base0A
+color11 #$light_base0A
+
+# blue
+color4  #$light_base0D
+color12 #$light_base0D
+
+# magenta
+color5  #$light_base0E
+color13 #$light_base0E
+
+# cyan
+color6  #$light_base0C
+color14 #$light_base0C
+
+# white
+color7  #$light_base05
+color15 #$light_base07

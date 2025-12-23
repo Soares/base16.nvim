@@ -9,14 +9,10 @@
 "    default vim theme, using this theme should change which red, blue, and
 "    green you see, but it should not change which things appear red vs blue
 "    vs green.
-" 3. Expose a g:base16_color_overrides parameter so that you *can* change
-"    which things appear red vs blue vs green, in such a way that if you
-"    change themes mid-flight then your customizations get re-applied.
+" 3. Expose g:base16_color_modifiers (for adding modifications like italics)
+"    and g:base16_color_overrides (for changing what appears what color).
 " 4. Expose a Base16Highlight command that you can use in case the above
 "    parameters are not enough for you.
-" 5. Expose a g:base16_transparent_background option in case you want vim to
-"    let the terminal set the background (e.g., if your terminal has
-"    a transparent background or a background image).
 
 " Boilerplate: clear existing highlighting, reset the syntax, etc.
 highlight clear
@@ -35,23 +31,43 @@ let g:colors_name = 'redscreen'
 " to the light/dark greys differently depending on &background. See below.
 "
 " dark3 is the darkest grey; light3 is the lightest grey.
-let g:base16_hex_colors = {
-      \ 'black':  '#110000',
-      \ 'dark3':  '#330000',
-      \ 'dark2':  '#550000',
-      \ 'dark1':  '#770000',
-      \ 'light1': '#990000',
-      \ 'light2': '#bb0000',
-      \ 'light3': '#dd0000',
-      \ 'white':  '#ff0000',
-      \ 'red':    '#770000',
-      \ 'orange': '#990000',
-      \ 'yellow': '#770000',
-      \ 'green':  '#bb0000',
-      \ 'aqua':   '#550000',
-      \ 'blue':   '#990000',
-      \ 'purple': '#bb0000',
-      \ 'brown':  '#550000'}
+if &background == 'dark'
+  let g:base16_hex_colors = {
+        \ 'black':  '#110000',
+        \ 'dark3':  '#330000',
+        \ 'dark2':  '#550000',
+        \ 'dark1':  '#770000',
+        \ 'light1': '#990000',
+        \ 'light2': '#bb0000',
+        \ 'light3': '#dd0000',
+        \ 'white':  '#ff0000',
+        \ 'red':    '#770000',
+        \ 'orange': '#990000',
+        \ 'yellow': '#770000',
+        \ 'green':  '#bb0000',
+        \ 'aqua':   '#550000',
+        \ 'blue':   '#990000',
+        \ 'purple': '#bb0000',
+        \ 'brown':  '#550000'}
+else
+  let g:base16_hex_colors = {
+        \ 'black':  '#110000',
+        \ 'dark3':  '#330000',
+        \ 'dark2':  '#550000',
+        \ 'dark1':  '#770000',
+        \ 'light1': '#990000',
+        \ 'light2': '#bb0000',
+        \ 'light3': '#dd0000',
+        \ 'white':  '#ff0000',
+        \ 'red':    '#770000',
+        \ 'orange': '#990000',
+        \ 'yellow': '#770000',
+        \ 'green':  '#bb0000',
+        \ 'aqua':   '#550000',
+        \ 'blue':   '#990000',
+        \ 'purple': '#bb0000',
+        \ 'brown':  '#550000'}
+endif
 
 let g:base16_cterm_colors = {
       \ 'black':  0,
@@ -129,7 +145,7 @@ command! -bang -nargs=+ Base16Highlight call base16#highlight(<q-bang>=='!', <f-
 "    messages now appear with white text and grey background. If instead
 "    ErroMsg has bg=white fg=red reverse then the bg remains red the cursor is
 "    over the message.
-" 3. We use greys for thinsg like Comment and NonText, when the default
+" 3. We use greys for things like Comment and NonText, when the default
 "    styling uses blues.
 let s:specs = {}
 
@@ -140,6 +156,7 @@ if get(g:, 'base16_transparent_background', 0)
 else
   let s:specs['Normal'] = 'fg=antibase bg=base'
 endif
+
 
 " The core vim defaults are as follows:
 "   Comment        fg=#80a0ff
@@ -157,18 +174,50 @@ endif
 " We will follow this pattern with a few minor changes:
 " 1. We'll use the reverse trick on ErrorMsg and TODO
 " 2. TODO will be black-on-yellow, because blue-on-yellow is garish.
-" To override these, see the discussion on g:base16_color_overrides below.
-let s:specs['Comment']     = 'fg=blue italic'
-let s:specs['Constant']    = 'fg=red'
-let s:specs['Identifier']  = 'fg=aqua'
-let s:specs['Statement']   = 'fg=yellow'
-let s:specs['PreProc']     = 'fg=purple'
-let s:specs['Type']        = 'fg=green'
-let s:specs['Special']     = 'fg=orange'
-let s:specs['Underlined']  = 'fg=blue underline'
-let s:specs['Ignore']      = 'fg=bg'
-let s:specs['Error']       = 'fg=red bg=white bold reverse'
-let s:specs['Todo']        = 'fg=yellow bg=black bold reverse'
+" 3. fg=bg doesn't work if there's no bg; in that case we use fg=base.
+let s:specs['Comment']          = 'fg=blue italic'
+let s:specs['Constant']         = 'fg=red'
+let s:specs['String']           = 'link Constant'
+let s:specs['Character']        = 'link Constant'
+let s:specs['Number']           = 'link Constant'
+let s:specs['Boolean']          = 'link Constant'
+let s:specs['Float']            = 'link Constant'
+let s:specs['Identifier']       = 'fg=aqua'
+let s:specs['Function']         = 'link Identifier'
+let s:specs['Variable']         = 'link Identifier'
+let s:specs['Statement']        = 'fg=yellow'
+let s:specs['Conditional']      = 'link Statement'
+let s:specs['Repeat']           = 'link Statement'
+let s:specs['Label']            = 'link Statement'
+let s:specs['Operator']         = 'link Statement'
+let s:specs['Keyword']          = 'link Statement'
+let s:specs['Exception']        = 'link Statement'
+let s:specs['PreProc']          = 'fg=purple'
+let s:specs['Include']          = 'link PreProc'
+let s:specs['Define']           = 'link PreProc'
+let s:specs['Macro']            = 'link PreProc'
+let s:specs['PreCondit']        = 'fg=purple'
+let s:specs['Type']             = 'fg=green'
+let s:specs['StorageClass']     = 'link Type'
+let s:specs['Structure']        = 'link Type'
+let s:specs['Typedef']          = 'link Type'
+let s:specs['Special']          = 'fg=orange'
+let s:specs['SpecialChar']      = 'link Special'
+let s:specs['Tag']              = 'link Special'
+let s:specs['Delimiter']        = 'link Special'
+let s:specs['SpecialComment']   = 'link Special'
+let s:specs['Debug']            = 'link Special'
+let s:specs['Underlined']       = 'fg=blue underline'
+if get(g:, 'base16_transparent_background', 0)
+    let s:specs['Ignore']       = 'fg=base'
+else
+    let s:specs['Ignore']       = 'fg=bg'
+endif
+let s:specs['Error']            = 'fg=red bg=white bold reverse'
+let s:specs['Todo']             = 'fg=yellow bg=black bold reverse'
+let s:specs['Added']            = 'fg=green'
+let s:specs['Changed']          = 'fg=blue'
+let s:specs['Removed']          = 'fg=red'
 
 " For the remaining defaults, and a description of what the groups do, see
 " |highlight-groups|. The defaults are included here. We make a number of
@@ -237,15 +286,22 @@ let s:specs['SpellCap'] = 'undercurl sp=blue'
 let s:specs['SpellRare'] = 'undercurl sp=purple'
 let s:specs['SpellLocal'] = 'undercurl sp=aqua'
 
-" Now the popup menu. We keep the defaults.
+" Now the popup menu. We try to keep the defaults with a choice of 'grey' that varies with bg.
 "   Pmenu          bg=Magenta
 "   PmenuSel       bg=DarkGrey
 "   PmenuSbar      bg=Grey
 "   PmenuThumb     bg=White
-let s:specs['Pmenu']      = 'fg=light3 bg=purple'
-let s:specs['PmenuSel']   = 'fg=light3 bg=dark1'
+let s:specs['Pmenu']      = 'fg=similar3 bg=purple'
+let s:specs['PmenuSel']   = 'fg=similar3 bg=contrast1'
 let s:specs['PmenuSbar']  = 'bg=dark3'
 let s:specs['PmenuThumb'] = 'bg=white'
+
+" Now some misc stuff. TODO: figure out what Neovim has been up to over the last few years and
+" cover everything more completely.
+let s:specs['NormalFloat'] = 'fg=antibase bg=base'
+let s:specs['FloatBorder'] = 'fg=purple bg=base'
+let s:specs['FloatTitle']  = 'fg=purple bg=base'
+let s:specs['FloatFooter'] = 'fg=purple bg=base'
 
 " Now for all the interface components.
 " This is a pretty finickey set of UI elements to get right. We want:
@@ -307,7 +363,6 @@ execute 'Base16Highlight! Normal' s:specs['Normal']
 call remove(s:specs, 'Normal')
 if has_key(get(g:, 'base16_color_modifiers', {}), 'Normal')
   execute 'Base16Highlight Normal' g:base16_color_modifiers['Normal']
-  call remove(g:base16_color_modifiers, 'Normal')
 endif
 
 for [s:group, s:spec] in items(s:specs)
@@ -345,4 +400,3 @@ if has('termguicolors') && &termguicolors
   let g:terminal_color_14 = g:base16_hex_colors['aqua']    " light cyan
   let g:terminal_color_15 = g:base16_hex_colors['white']   " white
 endif
-

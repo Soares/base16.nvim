@@ -64,6 +64,7 @@ The current available color schemes are
     pop
     railscasts
     redscreen
+    rose-pine
     royal
     seti
     shapeshifter
@@ -106,7 +107,13 @@ You're welcome to change colorschemes on the fly. For more info, see
 
 It's also easy to make your own base16 color scheme, see the `schemes/`
 directory for details. Basically, all you need to do is make a yaml file with
-16 hex values in it. For reference, the order is:
+either 16 hex values in it, or two sets of 16 hex values indented under dark:
+and light: sections (as in the rose-pine case). If you use 16 values, then a
+dark scheme and a light scheme are both generated from those 16 values as
+inverses of each other, but you can use 32 to have the light/dark pairing that
+is not necessarily a literal inversion.
+
+For reference, the color order is:
 
     black dark3 dark2 dark1 light1 light2 light3 white
     red orange yellow green aqua blue purple brown
@@ -114,3 +121,6 @@ directory for details. Basically, all you need to do is make a yaml file with
 If you change the templates or add schemes, run `python buildall.py` to
 generate all the pretty new color files. You'll need
 [base16-builder](https://github.com/base16-builder/base16-builder) installed.
+
+I'm also tinkering with producing themes for kitty and fish. Which I probably
+shouldn't do in this repo but /shrug.

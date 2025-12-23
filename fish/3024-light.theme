@@ -1,0 +1,39 @@
+# 3024 light theme
+# syntax highlighting variables
+# https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
+fish_color_normal 090300
+fish_color_command a16a94
+fish_color_keyword b5e4f4
+fish_color_quote fded02
+fish_color_redirection 01a0e4
+fish_color_end 807d7c
+fish_color_error db2d20
+fish_color_param e8bbd0
+fish_color_comment 5c5855
+fish_color_selection --reverse
+fish_color_operator 090300
+fish_color_escape 01a0e4
+fish_color_autosuggestion 5c5855
+fish_color_cwd e8bbd0
+fish_color_user fded02
+fish_color_host b5e4f4
+fish_color_host_remote a16a94
+fish_color_cancel 090300
+fish_color_search_match --background=f7f7f7
+fish_color_valid_path
+
+# pager color variables
+# https://fishshell.com/docs/current/interactive.html#pager-color-variables
+fish_pager_color_progress e8bbd0
+fish_pager_color_background --background=d6d5d4
+fish_pager_color_prefix b5e4f4
+fish_pager_color_completion 807d7c
+fish_pager_color_description 807d7c
+fish_pager_color_secondary_background
+fish_pager_color_secondary_prefix
+fish_pager_color_secondary_completion
+fish_pager_color_secondary_description
+fish_pager_color_selected_background --background=a5a2a2
+fish_pager_color_selected_prefix b5e4f4
+fish_pager_color_selected_completion 090300
+fish_pager_color_selected_description 090300

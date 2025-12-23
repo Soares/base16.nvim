@@ -1,0 +1,39 @@
+# Yesterday Night dark theme
+# syntax highlighting variables
+# https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
+fish_color_normal dfe1e8
+fish_color_command b294bb
+fish_color_keyword 8abeb7
+fish_color_quote f0c674
+fish_color_redirection 81a2be
+fish_color_end c0c5ce
+fish_color_error cc6666
+fish_color_param de935f
+fish_color_comment a7adba
+fish_color_selection --reverse
+fish_color_operator dfe1e8
+fish_color_escape 81a2be
+fish_color_autosuggestion a7adba
+fish_color_cwd de935f
+fish_color_user f0c674
+fish_color_host 8abeb7
+fish_color_host_remote b294bb
+fish_color_cancel dfe1e8
+fish_color_search_match --background=343d46
+fish_color_valid_path
+
+# pager color variables
+# https://fishshell.com/docs/current/interactive.html#pager-color-variables
+fish_pager_color_progress de935f
+fish_pager_color_background --background=4f5b66
+fish_pager_color_prefix 8abeb7
+fish_pager_color_completion c0c5ce
+fish_pager_color_description c0c5ce
+fish_pager_color_secondary_background
+fish_pager_color_secondary_prefix
+fish_pager_color_secondary_completion
+fish_pager_color_secondary_description
+fish_pager_color_selected_background --background=65737e
+fish_pager_color_selected_prefix 8abeb7
+fish_pager_color_selected_completion dfe1e8
+fish_pager_color_selected_description dfe1e8

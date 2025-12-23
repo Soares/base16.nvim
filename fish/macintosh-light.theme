@@ -1,0 +1,39 @@
+# Macintosh light theme
+# syntax highlighting variables
+# https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
+fish_color_normal 000000
+fish_color_command 4700a5
+fish_color_keyword 02abea
+fish_color_quote fbf305
+fish_color_redirection 0000d3
+fish_color_end 808080
+fish_color_error dd0907
+fish_color_param ff6403
+fish_color_comment 808080
+fish_color_selection --reverse
+fish_color_operator 000000
+fish_color_escape 0000d3
+fish_color_autosuggestion 808080
+fish_color_cwd ff6403
+fish_color_user fbf305
+fish_color_host 02abea
+fish_color_host_remote 4700a5
+fish_color_cancel 000000
+fish_color_search_match --background=ffffff
+fish_color_valid_path
+
+# pager color variables
+# https://fishshell.com/docs/current/interactive.html#pager-color-variables
+fish_pager_color_progress ff6403
+fish_pager_color_background --background=c0c0c0
+fish_pager_color_prefix 02abea
+fish_pager_color_completion 808080
+fish_pager_color_description 808080
+fish_pager_color_secondary_background
+fish_pager_color_secondary_prefix
+fish_pager_color_secondary_completion
+fish_pager_color_secondary_description
+fish_pager_color_selected_background --background=c0c0c0
+fish_pager_color_selected_prefix 02abea
+fish_pager_color_selected_completion 000000
+fish_pager_color_selected_description 000000

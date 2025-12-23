@@ -10,6 +10,11 @@ function! base16#highlight(bang, group, ...)
   let l:bg = 0
   let l:sp = 0
   let l:attrs = []
+  " TODO: this is a bit hacky.
+  if len(a:000) == 2 && a:000[0] == 'link'
+    execute (a:bang ? 'highlight!' : 'highlight') 'link' a:group a:000[1]
+    return
+  endif
   for l:arg in a:000
     if l:arg =~? '^fg='
       let l:fg = 1

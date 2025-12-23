@@ -1,0 +1,39 @@
+# Codeschool light theme
+# syntax highlighting variables
+# https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
+fish_color_normal 232c31
+fish_color_command c59820
+fish_color_keyword b02f30
+fish_color_quote a03b1e
+fish_color_redirection 484d79
+fish_color_end 84898c
+fish_color_error 2a5491
+fish_color_param 43820d
+fish_color_comment 3f4944
+fish_color_selection --reverse
+fish_color_operator 232c31
+fish_color_escape 484d79
+fish_color_autosuggestion 3f4944
+fish_color_cwd 43820d
+fish_color_user a03b1e
+fish_color_host b02f30
+fish_color_host_remote c59820
+fish_color_cancel 232c31
+fish_color_search_match --background=b5d8f6
+fish_color_valid_path
+
+# pager color variables
+# https://fishshell.com/docs/current/interactive.html#pager-color-variables
+fish_pager_color_progress 43820d
+fish_pager_color_background --background=a7cfa3
+fish_pager_color_prefix b02f30
+fish_pager_color_completion 84898c
+fish_pager_color_description 84898c
+fish_pager_color_secondary_background
+fish_pager_color_secondary_prefix
+fish_pager_color_secondary_completion
+fish_pager_color_secondary_description
+fish_pager_color_selected_background --background=9ea7a6
+fish_pager_color_selected_prefix b02f30
+fish_pager_color_selected_completion 232c31
+fish_pager_color_selected_description 232c31

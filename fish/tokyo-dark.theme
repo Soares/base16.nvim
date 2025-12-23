@@ -1,0 +1,39 @@
+# Tokyo Night dark theme
+# syntax highlighting variables
+# https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
+fish_color_normal a9b1d6
+fish_color_command bb9af7
+fish_color_keyword b4f9f8
+fish_color_quote 0db9d7
+fish_color_redirection 2ac3de
+fish_color_end 787c99
+fish_color_error c0caf5
+fish_color_param a9b1d6
+fish_color_comment 444b6a
+fish_color_selection --reverse
+fish_color_operator a9b1d6
+fish_color_escape 2ac3de
+fish_color_autosuggestion 444b6a
+fish_color_cwd a9b1d6
+fish_color_user 0db9d7
+fish_color_host b4f9f8
+fish_color_host_remote bb9af7
+fish_color_cancel a9b1d6
+fish_color_search_match --background=1a1b26
+fish_color_valid_path
+
+# pager color variables
+# https://fishshell.com/docs/current/interactive.html#pager-color-variables
+fish_pager_color_progress a9b1d6
+fish_pager_color_background --background=16161e
+fish_pager_color_prefix b4f9f8
+fish_pager_color_completion 787c99
+fish_pager_color_description 787c99
+fish_pager_color_secondary_background
+fish_pager_color_secondary_prefix
+fish_pager_color_secondary_completion
+fish_pager_color_secondary_description
+fish_pager_color_selected_background --background=2f3549
+fish_pager_color_selected_prefix b4f9f8
+fish_pager_color_selected_completion a9b1d6
+fish_pager_color_selected_description a9b1d6

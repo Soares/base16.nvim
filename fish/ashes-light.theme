@@ -1,0 +1,39 @@
+# Ashes light theme
+# syntax highlighting variables
+# https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
+fish_color_normal 1C2023
+fish_color_command C795AE
+fish_color_keyword 95AEC7
+fish_color_quote AEC795
+fish_color_redirection AE95C7
+fish_color_end ADB3BA
+fish_color_error C7AE95
+fish_color_param C7C795
+fish_color_comment 747C84
+fish_color_selection --reverse
+fish_color_operator 1C2023
+fish_color_escape AE95C7
+fish_color_autosuggestion 747C84
+fish_color_cwd C7C795
+fish_color_user AEC795
+fish_color_host 95AEC7
+fish_color_host_remote C795AE
+fish_color_cancel 1C2023
+fish_color_search_match --background=F3F4F5
+fish_color_valid_path
+
+# pager color variables
+# https://fishshell.com/docs/current/interactive.html#pager-color-variables
+fish_pager_color_progress C7C795
+fish_pager_color_background --background=DFE2E5
+fish_pager_color_prefix 95AEC7
+fish_pager_color_completion ADB3BA
+fish_pager_color_description ADB3BA
+fish_pager_color_secondary_background
+fish_pager_color_secondary_prefix
+fish_pager_color_secondary_completion
+fish_pager_color_secondary_description
+fish_pager_color_selected_background --background=C7CCD1
+fish_pager_color_selected_prefix 95AEC7
+fish_pager_color_selected_completion 1C2023
+fish_pager_color_selected_description 1C2023

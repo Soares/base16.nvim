@@ -1,0 +1,39 @@
+# Atelier Plateau dark theme
+# syntax highlighting variables
+# https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
+fish_color_normal 8a8585
+fish_color_command 8464c4
+fish_color_keyword 5485b6
+fish_color_quote a06e3b
+fish_color_redirection 7272ca
+fish_color_end 7e7777
+fish_color_error ca4949
+fish_color_param b45a3c
+fish_color_comment 655d5d
+fish_color_selection --reverse
+fish_color_operator 8a8585
+fish_color_escape 7272ca
+fish_color_autosuggestion 655d5d
+fish_color_cwd b45a3c
+fish_color_user a06e3b
+fish_color_host 5485b6
+fish_color_host_remote 8464c4
+fish_color_cancel 8a8585
+fish_color_search_match --background=1b1818
+fish_color_valid_path
+
+# pager color variables
+# https://fishshell.com/docs/current/interactive.html#pager-color-variables
+fish_pager_color_progress b45a3c
+fish_pager_color_background --background=292424
+fish_pager_color_prefix 5485b6
+fish_pager_color_completion 7e7777
+fish_pager_color_description 7e7777
+fish_pager_color_secondary_background
+fish_pager_color_secondary_prefix
+fish_pager_color_secondary_completion
+fish_pager_color_secondary_description
+fish_pager_color_selected_background --background=585050
+fish_pager_color_selected_prefix 5485b6
+fish_pager_color_selected_completion 8a8585
+fish_pager_color_selected_description 8a8585

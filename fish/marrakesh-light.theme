@@ -1,0 +1,39 @@
+# Marrakesh light theme
+# syntax highlighting variables
+# https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
+fish_color_normal 201602
+fish_color_command 8868b3
+fish_color_keyword 75a738
+fish_color_quote a88339
+fish_color_redirection 477ca1
+fish_color_end 86813b
+fish_color_error c35359
+fish_color_param b36144
+fish_color_comment 6c6823
+fish_color_selection --reverse
+fish_color_operator 201602
+fish_color_escape 477ca1
+fish_color_autosuggestion 6c6823
+fish_color_cwd b36144
+fish_color_user a88339
+fish_color_host 75a738
+fish_color_host_remote 8868b3
+fish_color_cancel 201602
+fish_color_search_match --background=faf0a5
+fish_color_valid_path
+
+# pager color variables
+# https://fishshell.com/docs/current/interactive.html#pager-color-variables
+fish_pager_color_progress b36144
+fish_pager_color_background --background=ccc37a
+fish_pager_color_prefix 75a738
+fish_pager_color_completion 86813b
+fish_pager_color_description 86813b
+fish_pager_color_secondary_background
+fish_pager_color_secondary_prefix
+fish_pager_color_secondary_completion
+fish_pager_color_secondary_description
+fish_pager_color_selected_background --background=948e48
+fish_pager_color_selected_prefix 75a738
+fish_pager_color_selected_completion 201602
+fish_pager_color_selected_description 201602

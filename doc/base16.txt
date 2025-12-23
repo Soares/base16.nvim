@@ -150,10 +150,6 @@ you could run a bunch of :Base16Highlight commands in your init.vim after
 :colorscheme, but then you'd need to re-run them every time you changed color
 schemes, which would be quite annoying.
 
-					*g:base16_transparent_background*
-Set this to 1 if you don't want nvim painting a background (i.e., if you want
-to use terminal transparency and/or terminal background images).
-
 
 ==============================================================================
 COMMANDS					*base16-commands*
