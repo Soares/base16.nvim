@@ -1,0 +1,19 @@
+# Based on Tomorrow by Chris Kempson and Yesterday by FroZnShiva.
+scheme: "Ereyesterday"
+author: "Nate"
+base00: "1d1f21" # Dark
+base01: "282a2e" #
+base02: "4d4d4c" #
+base03: "969896" #
+base04: "8e908c" #
+base05: "d6d6d6" #
+base06: "efefef" #
+base07: "ffffff" # Light
+base08: "c82829" # Red
+base09: "f5871f" # Orange
+base0A: "eab700" # Yellow
+base0B: "4fac10" # Green
+base0C: "3e999f" # Aqua
+base0D: "4271ae" # Blue
+base0E: "8959a8" # Purple
+base0F: "7b3d33" # Brown
