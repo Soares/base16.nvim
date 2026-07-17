@@ -19,17 +19,11 @@ function! base16#highlight(bang, group, ...)
     if l:arg =~? '^fg='
       let l:fg = 1
       let [l:gui, l:cterm] = s:Color(l:arg[3:])
-      execute 'highlight' a:group 'guifg='.l:gui
-      if !has('termguicolors') || !&termguicolors
-        execute 'highlight' a:group 'ctermfg='.l:cterm
-      endif
+      execute 'highlight' a:group 'guifg='.l:gui 'ctermfg='.l:cterm
     elseif l:arg =~? '^bg='
       let l:bg = 1
       let [l:gui, l:cterm] = s:Color(l:arg[3:])
-      execute 'highlight' a:group 'guibg='.l:gui
-      if !has('termguicolors') || !&termguicolors
-        execute 'highlight' a:group 'ctermbg='.l:cterm
-      endif
+      execute 'highlight' a:group 'guibg='.l:gui 'ctermbg='.l:cterm
     elseif l:arg =~? '^sp='
       let l:sp = 1
       let [l:gui, l:cterm] = s:Color(l:arg[3:])
@@ -39,18 +33,19 @@ function! base16#highlight(bang, group, ...)
     endif
   endfor
   if l:fg == 0 && a:bang
-    execute 'highlight' a:group 'guifg=NONE'
+    execute 'highlight' a:group 'guifg=NONE ctermfg=NONE'
   endif
   if l:bg == 0 && a:bang
-    execute 'highlight' a:group 'guibg=NONE'
+    execute 'highlight' a:group 'guibg=NONE ctermbg=NONE'
   endif
   if l:sp == 0 && a:bang
     execute 'highlight' a:group 'guisp=NONE'
   endif
   if len(l:attrs) > 0
-    execute 'highlight' a:group 'gui='.join(l:attrs, ',')
+    let l:a = join(l:attrs, ',')
+    execute 'highlight' a:group 'gui='.l:a 'cterm='.l:a
   elseif a:bang
-    execute 'highlight' a:group 'gui=NONE'
+    execute 'highlight' a:group 'gui=NONE cterm=NONE'
   endif
 endfunction
 
